@@ -1,8 +1,3 @@
-Below is a **sample README.md** you can include in the repository that hosts your **one-page portfolio** code. It explains what the project is, how to install/run it, how to customize it, and provides general usage guidelines. You can freely modify any sections to better fit your style or add more details.
-
----
-
-```markdown
 # Gabriel Rovesti - Portfolio
 
 A modern, single-page portfolio built with **Tailwind CSS** and subtle animations. This project showcases my professional experience, projects, skills, certifications, and achievements in a clean, visually appealing layout.
@@ -92,11 +87,3 @@ For collaborations, inquiries, or suggestions, feel free to [email me](mailto:ro
 
 _Thanks for checking out my portfolio!_  
 _If you have any questions, suggestions, or issues, please [open an issue](https://github.com/your-username/portfolio/issues) or reach out directly._
-```
-
-### Tips
-- Include a **real screenshot** in your repository and reference it under `![Portfolio Screenshot](./screenshot.png)`.  
-- If you modify or remove certain sections (like “Certifications” or “Achievements”), also adjust the README to reflect the changes.  
-- For advanced custom Tailwind configurations, you might want to set up a local build environment with Node.js, but that’s optional.
-
-This README gives visitors a clear overview of your portfolio, instructions to run it locally, and guidance on how to customize or deploy it.
