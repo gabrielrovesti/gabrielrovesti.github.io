@@ -1,644 +1,842 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gabriel Rovesti - Portfolio</title>
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    /* Neon text effect */
-    .neon-text {
-      text-shadow: 0 0 6px rgba(255,255,255,0.8);
-    }
-    /* Fade-in animation */
-    .fade-in {
-      animation: fadeIn 1s ease-in forwards;
-      opacity: 0;
-    }
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-    /* Hover lift effect for cards */
-    .hover-lift:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-    }
-    /* Collapsible transitions */
-    .collapse {
-      transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-      overflow: hidden;
-      opacity: 1;
-    }
-    .collapse.hidden {
-      max-height: 0 !important;
-      opacity: 0;
-    }
-    /* For skill expansions */
-    .subskills {
-      transition: max-height 0.4s ease;
-      overflow: hidden;
-    }
-    .subskills.hidden {
-      max-height: 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Rovesti - Portfolio</title>
+    <meta name="description" content="Full Stack Developer | Teacher | M.Sc. Computer Science Student | Tutor">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./img/favicon.png">
 </head>
-<body class="bg-gray-900 text-white font-sans leading-relaxed">
+<body>
+    <!-- Header/Navigation -->
+    <header id="header">
+        <div class="container">
+            <a href="#" class="logo">Gabriel Rovesti</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#experience" class="nav-link">Experience</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#education" class="nav-link">Education</a></li>
+                    <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                    <li><a href="#achievements" class="nav-link">Achievements</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-  <!-- Navigation -->
-  <header class="fixed w-full bg-gray-900 bg-opacity-90 backdrop-blur-sm z-50 shadow-sm">
-    <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-      <div class="text-xl font-bold neon-text">Gabriel Rovesti</div>
-      <ul class="flex space-x-5 text-sm font-semibold">
-        <li><a href="#home" class="hover:text-purple-400">Home</a></li>
-        <li><a href="#about" class="hover:text-purple-400">About</a></li>
-        <li><a href="#experience" class="hover:text-purple-400">Experience</a></li>
-        <li><a href="#skills" class="hover:text-purple-400">Skills</a></li>
-        <li><a href="#projects" class="hover:text-purple-400">Projects</a></li>
-        <li><a href="#education" class="hover:text-purple-400">Education</a></li>
-        <li><a href="#certifications" class="hover:text-purple-400">Certifications</a></li>
-        <li><a href="#achievements" class="hover:text-purple-400">Achievements</a></li>
-        <li><a href="#contact" class="hover:text-purple-400">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="glitch-text">Hi, I'm Gabriel</h1>
+                    <p class="subtitle">M.Sc. Computer Science Student</p>
+                    <p class="caption">Bridging academic excellence with real-world innovation.</p>
+                    <div class="typing-container">
+                        <span class="typed-text"></span><span class="cursor">&nbsp;</span>
+                    </div>
+                    <p class="description">
+                        From reactive systems to blockchain-based security, I build robust, scalable, and user-centric solutions.
+                    </p>
+                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                </div>
+                <div class="hero-image">
+                    <img src="./img/gabriel.jpg" alt="Gabriel Rovesti" class="profile-img">
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span class="mouse">
+                    <span class="wheel"></span>
+                </span>
+                <p>Scroll Down</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Hero Section -->
-  <section id="home" class="pt-20 pb-10 bg-gradient-to-r from-purple-700 via-indigo-800 to-gray-900 fade-in">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
-      <!-- Left: Text & typing effect -->
-      <div class="md:w-1/2">
-        <h1 class="text-3xl md:text-4xl font-extrabold mb-2 neon-text">Hi, I'm Gabriel</h1>
-        <p class="text-lg md:text-xl font-semibold text-gray-100 mb-3">
-          M.Sc. Computer Science Student <br/>
-          <span class="font-normal text-gray-300">Bridging academic excellence with real-world innovation.</span>
-        </p>
-        <!-- Dynamic typing effect -->
-        <img 
-          src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=3000&pause=1000&color=FFFFFF&center=false&vCenter=true&width=500&lines=Full-Stack+Developer;Cybersecurity+Enthusiast;Tutor+%26+Teacher;Blockchain+%26+Cloud+Adventurer"
-          alt="Typing SVG"
-          class="mb-3"
-        />
-        <p class="text-gray-200 text-sm leading-snug mb-3">
-          From reactive systems to blockchain-based security, I build robust, scalable, and user-centric solutions.
-        </p>
-        <a href="#contact" class="inline-block bg-purple-600 hover:bg-purple-500 text-white px-5 py-2 rounded-full font-semibold transition">
-          Get in Touch
-        </a>
-      </div>
-      <!-- Right: Photo -->
-      <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
-        <!-- Replace with your actual photo -->
-        <img 
-          src="gabriel.jpg" 
-          alt="Gabriel Rovesti" 
-          class="w-56 h-56 object-cover rounded-full shadow-lg ring-4 ring-purple-600"
-        />
-      </div>
-    </div>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a <span class="highlight">Full-Stack Developer</span> and <span class="highlight">Educator</span> with expertise in cybersecurity, software engineering, and emerging tech.</p>
+                    <p>I love exploring innovative solutions—from real-time reactive systems to blockchain applications—and thrive on empowering others through teaching and mentorship.</p>
+                </div>
+                <div class="about-focus">
+                    <h3>Focus Areas</h3>
+                    <ul class="focus-list">
+                        <li><i class="fas fa-shield-alt"></i> Cybersecurity & Cloud Computing</li>
+                        <li><i class="fas fa-rocket"></i> DevOps & CI/CD</li>
+                        <li><i class="fas fa-link"></i> Blockchain & Decentralized Apps</li>
+                        <li><i class="fas fa-code-branch"></i> Software Architecture & Engineering</li>
+                        <li><i class="fas fa-chalkboard-teacher"></i> Inclusive Teaching & Mentorship</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- About Section -->
-  <section id="about" class="container mx-auto px-6 py-12">
-    <div class="md:flex md:items-center">
-      <div class="md:w-1/2 mb-6 md:mb-0">
-        <h2 class="text-2xl font-bold neon-text mb-4">About Me</h2>
-        <p class="text-gray-200 mb-3">
-          I'm a <span class="text-purple-400 font-semibold">Full-Stack Developer</span> and <span class="text-purple-400 font-semibold">Educator</span> with expertise in cybersecurity, software engineering, and emerging tech.
-        </p>
-        <p class="text-gray-200">
-          I love exploring innovative solutions—from real-time reactive systems to blockchain applications—and thrive on empowering others through teaching and mentorship.
-        </p>
-      </div>
-      <div class="md:w-1/2 md:pl-12">
-        <h3 class="text-xl font-bold neon-text mb-2">Focus Areas</h3>
-        <ul class="list-disc list-inside text-gray-300 space-y-1">
-          <li>Cybersecurity & Cloud Computing</li>
-          <li>DevOps & CI/CD</li>
-          <li>Blockchain & Decentralized Apps</li>
-          <li>Software Architecture & Engineering</li>
-          <li>Inclusive Teaching & Mentorship</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    <!-- Experience Section -->
+    <section id="experience" class="experience section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Experience</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="experience-grid" id="experience-grid">
+                <!-- Initial experiences (always visible) -->
+                <div class="card experience-card">
+                    <div class="card-header">
+                        <h3>Teacher of Systems and Networks</h3>
+                        <span class="badge">09/2024 - 06/2025</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="workplace">ITI Galileo Ferraris</span>
+                        <p>Taught theoretical and practical lessons on network architectures, protocols, and security for high school students (3rd and 4th year).</p>
+                    </div>
+                </div>
 
-  <!-- Experience Section (4 visible, then collapsible) -->
-  <section id="experience" class="bg-gray-800 py-12">
-    <div class="container mx-auto px-6">
-      <h2 class="text-2xl font-bold text-center neon-text mb-6">Experience</h2>
-      <!-- Grid 2x2 for the first 4 experiences -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="experienceGrid">
-        <!-- 1 -->
-        <div class="bg-gray-700 p-4 rounded hover-lift transition">
-          <h3 class="text-lg font-semibold text-purple-300">Teacher of Systems and Networks</h3>
-          <p class="text-sm text-gray-400">ITI Galileo Ferraris, 09/2024 - 06/2025</p>
-          <p class="mt-2 text-gray-200 text-sm">
-            Taught theoretical and practical lessons on network architectures, protocols, and security for high school students (3rd and 4th year).
-          </p>
-        </div>
-        <!-- 2 -->
-        <div class="bg-gray-700 p-4 rounded hover-lift transition">
-          <h3 class="text-lg font-semibold text-purple-300">Coordination &amp; Didactic Tutor (Formal Languages)</h3>
-          <p class="text-sm text-gray-400">University of Padua, 01/2025 - Present</p>
-          <p class="mt-2 text-gray-200 text-sm">
-            Led a team of tutors and supported the "Formal Languages and Automata" course through lectures, exercises, and student mentoring.
-          </p>
-        </div>
-        <!-- 3 -->
-        <div class="bg-gray-700 p-4 rounded hover-lift transition">
-          <h3 class="text-lg font-semibold text-purple-300">Didactic Tutor of Computability</h3>
-          <p class="text-sm text-gray-400">University of Padua, 09/2024 - 01/2025</p>
-          <p class="mt-2 text-gray-200 text-sm">
-            Assisted in teaching the Computability course for the M.Sc. in Computer Science, entirely in English, including lectures and project guidance.
-          </p>
-        </div>
-        <!-- 4 -->
-        <div class="bg-gray-700 p-4 rounded hover-lift transition">
-          <h3 class="text-lg font-semibold text-purple-300">Tutor for Inclusion</h3>
-          <p class="text-sm text-gray-400">University of Padua, 11/2023 - Present</p>
-          <p class="mt-2 text-gray-200 text-sm">
-            Provided specialized tutoring and managed exam arrangements for students with special needs, ensuring personalized learning.
-          </p>
-        </div>
-      </div>
+                <div class="card experience-card">
+                    <div class="card-header">
+                        <h3>Coordination & Didactic Tutor (Formal Languages)</h3>
+                        <span class="badge">01/2025 - Present</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="workplace">University of Padua</span>
+                        <p>Led a team of tutors and supported the "Formal Languages and Automata" course through lectures, exercises, and student mentoring.</p>
+                    </div>
+                </div>
 
-      <!-- Hidden experiences -->
-      <div id="experienceHidden" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 collapse hidden">
-        <!-- 5 -->
-        <div class="bg-gray-700 p-4 rounded hover-lift transition">
-          <h3 class="text-lg font-semibold text-purple-300">Private Teacher &amp; IT Assistant</h3>
-          <p class="text-sm text-gray-400">Freelance, 02/2016 - Present</p>
-          <p class="mt-2 text-gray-200 text-sm">
-            Conducted private tutoring (elementary to university) in programming, math, languages. Built WordPress sites and provided general IT support.
-          </p>
-        </div>
-        <!-- 6 -->
-        <div class="bg-gray-700 p-4 rounded hover-lift transition">
-          <h3 class="text-lg font-semibold text-purple-300">Curricular Intern</h3>
-          <p class="text-sm text-gray-400">Sync Lab S.r.l., 03/2023 - 06/2023</p>
-          <p class="mt-2 text-gray-200 text-sm">
-            Created a DApp proof-of-concept on Ethereum using EthersJS/Web3JS, integrating Self-Sovereign Identity (SSI) and Zero-Knowledge Proofs.
-          </p>
-        </div>
-        <!-- 7 -->
-        <div class="bg-gray-700 p-4 rounded hover-lift transition">
-          <h3 class="text-lg font-semibold text-purple-300">Customer Service Manager</h3>
-          <p class="text-sm text-gray-400">Clesp S.r.l., 07/2020 - 10/2021</p>
-          <p class="mt-2 text-gray-200 text-sm">
-            Oversaw customer service for supermarket chains and affiliated stores, including front office, team coordination, and database operations.
-          </p>
-        </div>
-        <!-- 8 -->
-        <div class="bg-gray-700 p-4 rounded hover-lift transition">
-          <h3 class="text-lg font-semibold text-purple-300">IT Applications Configurator</h3>
-          <p class="text-sm text-gray-400">Digife S.r.l., 01/2019 - 02/2019</p>
-          <p class="mt-2 text-gray-200 text-sm">
-            Customized WordPress sites, integrated e-commerce plugins, designed newsletters, and supported digital marketing campaigns.
-          </p>
-        </div>
-        <!-- 9 -->
-        <div class="bg-gray-700 p-4 rounded hover-lift transition">
-          <h3 class="text-lg font-semibold text-purple-300">Administrative Assistant</h3>
-          <p class="text-sm text-gray-400">CIERRE Elettronica, 06/2018 - 07/2018</p>
-          <p class="mt-2 text-gray-200 text-sm">
-            Provided administrative support during an internship, including document archiving and managing equipment.
-          </p>
-        </div>
-      </div>
+                <div class="card experience-card">
+                    <div class="card-header">
+                        <h3>Didactic Tutor of Computability</h3>
+                        <span class="badge">09/2024 - 01/2025</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="workplace">University of Padua</span>
+                        <p>Assisted in teaching the Computability course for the M.Sc. in Computer Science, entirely in English, including lectures and project guidance.</p>
+                    </div>
+                </div>
 
-      <!-- Button -->
-      <div class="text-center mt-6">
-        <button 
-          id="experienceToggleBtn" 
-          class="bg-purple-600 hover:bg-purple-500 text-white px-4 py-2 rounded-full font-semibold transition"
-          onclick="toggleExperience()"
-        >
-          Show More Experiences
-        </button>
-      </div>
-    </div>
-  </section>
+                <div class="card experience-card">
+                    <div class="card-header">
+                        <h3>Tutor for Inclusion</h3>
+                        <span class="badge">11/2023 - Present</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="workplace">University of Padua</span>
+                        <p>Provided specialized tutoring and managed exam arrangements for students with special needs, ensuring personalized learning.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hidden experiences -->
+            <div class="experience-grid hidden" id="more-experiences">
+                <div class="card experience-card">
+                    <div class="card-header">
+                        <h3>Private Teacher & IT Assistant</h3>
+                        <span class="badge">02/2016 - Present</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="workplace">Freelance</span>
+                        <p>Conducted private tutoring (elementary to university) in programming, math, languages. Built WordPress sites and provided general IT support.</p>
+                    </div>
+                </div>
 
-  <!-- Skills Section (Grouped, expandable subskills) -->
-  <section id="skills" class="py-12 bg-gray-900">
-    <div class="container mx-auto px-6">
-      <h2 class="text-2xl font-bold text-center neon-text mb-6">Skills</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        <!-- Example of a single skill (no subskills) -->
-        <div class="bg-gray-800 p-4 rounded hover-lift transition">
-          <img src="https://skillicons.dev/icons?i=java" alt="Java" class="w-8 h-8 mx-auto" />
-          <h4 class="text-center mt-3 font-semibold text-sm">Java</h4>
+                <div class="card experience-card">
+                    <div class="card-header">
+                        <h3>Curricular Intern</h3>
+                        <span class="badge">03/2023 - 06/2023</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="workplace">Sync Lab S.r.l.</span>
+                        <p>Created a DApp proof-of-concept on Ethereum using EthersJS/Web3JS, integrating Self-Sovereign Identity (SSI) and Zero-Knowledge Proofs.</p>
+                    </div>
+                </div>
+
+                <div class="card experience-card">
+                    <div class="card-header">
+                        <h3>Customer Service Manager</h3>
+                        <span class="badge">07/2020 - 10/2021</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="workplace">Clesp S.r.l.</span>
+                        <p>Oversaw customer service for supermarket chains and affiliated stores, including front office, team coordination, and database operations.</p>
+                    </div>
+                </div>
+
+                <div class="card experience-card">
+                    <div class="card-header">
+                        <h3>IT Applications Configurator</h3>
+                        <span class="badge">01/2019 - 02/2019</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="workplace">Digife S.r.l.</span>
+                        <p>Customized WordPress sites, integrated e-commerce plugins, designed newsletters, and supported digital marketing campaigns.</p>
+                    </div>
+                </div>
+
+                <div class="card experience-card">
+                    <div class="card-header">
+                        <h3>Administrative Assistant</h3>
+                        <span class="badge">06/2018 - 07/2018</span>
+                    </div>
+                    <div class="card-body">
+                        <span class="workplace">CIERRE Elettronica</span>
+                        <p>Provided administrative support during an internship, including document archiving and managing equipment.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="toggle-container">
+                <button id="experience-toggle" class="btn btn-toggle">
+                    <span class="show-text">Show More</span>
+                    <span class="hide-text">Show Less</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
         </div>
-        <!-- Another single skill -->
-        <div class="bg-gray-800 p-4 rounded hover-lift transition">
-          <img src="https://skillicons.dev/icons?i=python" alt="Python" class="w-8 h-8 mx-auto" />
-          <h4 class="text-center mt-3 font-semibold text-sm">Python</h4>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Programming Languages</h3>
+                    <div class="skill-cards">
+                        <div class="skill-card" data-skill="Java">
+                            <div class="skill-icon">
+                                <img src="https://skillicons.dev/icons?i=java" alt="Java">
+                            </div>
+                            <span class="skill-name">Java</span>
+                            <div class="skill-level">
+                                <div class="progress-bar" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card" data-skill="Python">
+                            <div class="skill-icon">
+                                <img src="https://skillicons.dev/icons?i=python" alt="Python">
+                            </div>
+                            <span class="skill-name">Python</span>
+                            <div class="skill-level">
+                                <div class="progress-bar" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card" data-skill="C/C++">
+                            <div class="skill-icon">
+                                <img src="https://skillicons.dev/icons?i=c,cpp" alt="C/C++">
+                            </div>
+                            <span class="skill-name">C/C++</span>
+                            <div class="skill-level">
+                                <div class="progress-bar" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-card" data-skill="JavaScript/TypeScript">
+                            <div class="skill-icon">
+                                <img src="https://skillicons.dev/icons?i=js,ts" alt="JavaScript/TypeScript">
+                            </div>
+                            <span class="skill-name">JavaScript/TypeScript</span>
+                            <div class="skill-level">
+                                <div class="progress-bar" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <div class="skill-cards">
+                        <div class="skill-card expandable" data-skill="HTML/CSS/SASS">
+                            <div class="skill-icon">
+                                <img src="https://skillicons.dev/icons?i=html,css,sass" alt="HTML/CSS/SASS">
+                            </div>
+                            <span class="skill-name">HTML/CSS/SASS</span>
+                            <div class="skill-level">
+                                <div class="progress-bar" style="width: 90%;"></div>
+                            </div>
+                            <div class="skill-details">
+                                <p>Responsive Design, Accessibility, Modern CSS Grid/Flexbox</p>
+                            </div>
+                            <button class="expand-btn" aria-label="Show details">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="skill-card expandable" data-skill="React/Angular">
+                            <div class="skill-icon">
+                                <img src="https://skillicons.dev/icons?i=react,angular" alt="React/Angular">
+                            </div>
+                            <span class="skill-name">React/Angular</span>
+                            <div class="skill-level">
+                                <div class="progress-bar" style="width: 80%;"></div>
+                            </div>
+                            <div class="skill-details">
+                                <p>Component Architecture, Hooks, State Management, Angular Services</p>
+                            </div>
+                            <button class="expand-btn" aria-label="Show details">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="skill-card expandable" data-skill="WordPress">
+                            <div class="skill-icon">
+                                <img src="https://skillicons.dev/icons?i=wordpress" alt="WordPress">
+                            </div>
+                            <span class="skill-name">WordPress</span>
+                            <div class="skill-level">
+                                <div class="progress-bar" style="width: 85%;"></div>
+                            </div>
+                            <div class="skill-details">
+                                <p>Theme Development, WooCommerce, Plugin Configuration</p>
+                            </div>
+                            <button class="expand-btn" aria-label="Show details">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend & Database</h3>
+                    <div class="skill-cards">
+                        <div class="skill-card expandable" data-skill="Databases">
+                            <div class="skill-icon">
+                                <img src="https://skillicons.dev/icons?i=mysql,postgres,mongodb" alt="Databases">
+                            </div>
+                            <span class="skill-name">Databases</span>
+                            <div class="skill-level">
+                                <div class="progress-bar" style="width: 85%;"></div>
+                            </div>
+                            <div class="skill-details">
+                                <p>SQL, NoSQL, Query Optimization, Data Modeling</p>
+                            </div>
+                            <button class="expand-btn" aria-label="Show details">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="skill-card expandable" data-skill="Server Frameworks">
+                            <div class="skill-icon">
+                                <img src="https://skillicons.dev/icons?i=spring,dotnet" alt="Server Frameworks">
+                            </div>
+                            <span class="skill-name">Server Frameworks</span>
+                            <div class="skill-level">
+                                <div class="progress-bar" style="width: 80%;"></div>
+                            </div>
+                            <div class="skill-details">
+                                <p>Spring Boot, ASP.NET, REST APIs, Reactive Programming</p>
+                            </div>
+                            <button class="expand-btn" aria-label="Show details">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps & Cloud</h3>
+                    <div class="skill-cards">
+                        <div class="skill-card expandable" data-skill="Docker/CI/CD">
+                            <div class="skill-icon">
+                                <img src="https://skillicons.dev/icons?i=docker,jenkins,ansible" alt="Docker/CI/CD">
+                            </div>
+                            <span class="skill-name">Docker/CI/CD</span>
+                            <div class="skill-level">
+                                <div class="progress-bar" style="width: 75%;"></div>
+                            </div>
+                            <div class="skill-details">
+                                <p>Containerization, Pipeline Automation, Configuration Management</p>
+                            </div>
+                            <button class="expand-btn" aria-label="Show details">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <div class="skill-card expandable" data-skill="Cloud Platforms">
+                            <div class="skill-icon">
+                                <img src="https://skillicons.dev/icons?i=aws,gcp,heroku" alt="Cloud Platforms">
+                            </div>
+                            <span class="skill-name">Cloud Platforms</span>
+                            <div class="skill-level">
+                                <div class="progress-bar" style="width: 70%;"></div>
+                            </div>
+                            <div class="skill-details">
+                                <p>AWS, Google Cloud, Serverless, Cloud Deployment</p>
+                            </div>
+                            <button class="expand-btn" aria-label="Show details">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- Grouped skill with subskills hidden by default -->
-        <div class="bg-gray-800 p-4 rounded hover-lift transition relative">
-          <div class="flex justify-center">
-            <img src="https://skillicons.dev/icons?i=html,css,sass,bootstrap" alt="HTML/CSS" class="w-8 h-8" />
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Projects</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="projects-grid" id="featured-projects">
+                <div class="card project-card">
+                    <div class="card-header">
+                        <h3>Event Analyzer</h3>
+                        <span class="badge">03/2025</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Reactive, real-time event processing system with Spring WebFlux, MongoDB, and Redis. Implements intelligent caching and secure REST APIs.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Spring</span>
+                            <span class="tech-badge">MongoDB</span>
+                            <span class="tech-badge">Redis</span>
+                            <span class="tech-badge">WebFlux</span>
+                        </div>
+                        <a href="https://github.com/gabrielrovesti/event-analyzer" class="btn btn-outline" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="card-header">
+                        <h3>SystemFX</h3>
+                        <span class="badge">03/2025</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Advanced F# framework for functional data stream processing with asynchronous runtime and pure functional pipelines.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">F#</span>
+                            <span class="tech-badge">.NET</span>
+                            <span class="tech-badge">Functional</span>
+                        </div>
+                        <a href="https://github.com/gabrielrovesti/SystemFX" class="btn btn-outline" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="card-header">
+                        <h3>FlutterRustImageFX</h3>
+                        <span class="badge">02/2025 - 03/2025</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Cross-platform image editing app using Flutter for UI and Rust/WebAssembly for high-performance image filters.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Flutter</span>
+                            <span class="tech-badge">Rust</span>
+                            <span class="tech-badge">WebAssembly</span>
+                        </div>
+                        <a href="https://github.com/gabrielrovesti/FlutterRustImageFX" class="btn btn-outline" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="card-header">
+                        <h3>Circuit Board Drilling Optimization</h3>
+                        <span class="badge">10/2024 - 01/2025</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Implemented exact (CPLEX) and metaheuristic (Tabu Search) solutions for PCB drilling, boosting efficiency by up to 84%.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">C++</span>
+                            <span class="tech-badge">CPLEX</span>
+                            <span class="tech-badge">Optimization</span>
+                        </div>
+                        <a href="https://github.com/gabrielrovesti/MeMoCO-Assignments" class="btn btn-outline" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hidden projects -->
+            <div class="projects-grid hidden" id="more-projects">
+                <div class="card project-card">
+                    <div class="card-header">
+                        <h3>IT Service Management - Bank Decommissioning</h3>
+                        <span class="badge">06/2024 - 09/2024</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Decommissioning legacy IT services using ITIL v4. Focused on connectivity transitions, best practices, and thorough documentation.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">ITIL</span>
+                            <span class="tech-badge">IT Management</span>
+                        </div>
+                        <a href="https://github.com/gabrielrovesti/ITSM-Decommissioning-Project" class="btn btn-outline" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="card-header">
+                        <h3>UAV Route Planning Strategies</h3>
+                        <span class="badge">07/2024 - 09/2024</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Research and implementation of efficient UAV routing for complex environments to maximize coverage and operational efficiency.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Algorithms</span>
+                            <span class="tech-badge">Research</span>
+                        </div>
+                        <a href="https://github.com/gabrielrovesti/WNMA-UAV-Route-Planning-Survey" class="btn btn-outline" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="card-header">
+                        <h3>DocHub</h3>
+                        <span class="badge">04/2024 - 07/2024</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Startup simulation project simplifying digital document retrieval and management across Italy.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Business Model</span>
+                            <span class="tech-badge">Pitch Deck</span>
+                        </div>
+                        <a href="https://github.com/gabrielrovesti/DocHub" class="btn btn-outline" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="card-header">
+                        <h3>NIST CSF Security Report</h3>
+                        <span class="badge">04/2024 - 06/2024</span>
+                    </div>
+                    <div class="card-body">
+                        <p>In-depth evaluation report of NIST Cybersecurity Framework 2.0 applied to healthcare systems, with actionable insights.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Cybersecurity</span>
+                            <span class="tech-badge">NIST</span>
+                            <span class="tech-badge">Healthcare</span>
+                        </div>
+                        <a href="https://github.com/gabrielrovesti/Security-and-Risk-Report" class="btn btn-outline" target="_blank">
+                            <i class="fab fa-github"></i> View Report
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="card-header">
+                        <h3>PLA Bluetooth Environment</h3>
+                        <span class="badge">12/2023 - 06/2024</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Security project implementing physical layer authentication for Bluetooth wireless channels.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Security</span>
+                            <span class="tech-badge">Bluetooth</span>
+                            <span class="tech-badge">Authentication</span>
+                        </div>
+                        <a href="https://github.com/gabrielrovesti/PLA-Bluetooth-Environment" class="btn btn-outline" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card project-card">
+                    <div class="card-header">
+                        <h3>VerifiedMovies</h3>
+                        <span class="badge">03/2023 - 06/2023</span>
+                    </div>
+                    <div class="card-body">
+                        <p>Blockchain-based authentication project leveraging Verifiable Credentials and Zero-Knowledge Proofs.</p>
+                        <div class="tech-stack">
+                            <span class="tech-badge">Blockchain</span>
+                            <span class="tech-badge">ZKP</span>
+                            <span class="tech-badge">Web3</span>
+                        </div>
+                        <a href="https://github.com/gabrielrovesti/VerifiedMovies" class="btn btn-outline" target="_blank">
+                            <i class="fab fa-github"></i> View on GitHub
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="toggle-container">
+                <button id="projects-toggle" class="btn btn-toggle">
+                    <span class="show-text">Show More</span>
+                    <span class="hide-text">Show Less</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="education-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="card education-card">
+                            <div class="card-header">
+                                <h3>M.Sc. in Computer Science</h3>
+                                <span class="badge">2023 - 2025</span>
+                            </div>
+                            <div class="card-body">
+                                <span class="institution">University of Padua</span>
+                                <p>Major in Internet, Mobile and Security – courses include Mobile Application Security, Advanced Cryptography, Secure App Development, and Big Data Management.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="card education-card">
+                            <div class="card-header">
+                                <h3>B.Sc. in Computer Science</h3>
+                                <span class="badge">2020 - 2023</span>
+                            </div>
+                            <div class="card-body">
+                                <span class="institution">University of Padua</span>
+                                <p>Focused on algorithms, object-oriented programming (C++/Qt), concurrent programming with Java, SQL-based database management, and accessible web development.</p>
+                                <span class="grade">Grade: 98/110</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="card education-card">
+                            <div class="card-header">
+                                <h3>Computer Science Diploma</h3>
+                                <span class="badge">2015 - 2020</span>
+                            </div>
+                            <div class="card-body">
+                                <span class="institution">I.I.S. Polo Tecnico di Adria</span>
+                                <p>Specialized in programming (C, Java), network design, HTML/CSS/JS/PHP, and IT project management.</p>
+                                <span class="grade">Grade: 100/100</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Certifications</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="certifications-grid">
+                <div class="card certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Design Thinking & Service Design / Gamification / UX-UI</h3>
+                    <span class="issuer">Fastweb Digital Academy</span>
+                    <span class="issue-date">March 2025</span>
+                    <p>A comprehensive suite covering user-centric design, gamification, and advanced communication for the web.</p>
+                </div>
+
+                <div class="card certification-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-linux"></i>
+                    </div>
+                    <h3>Introduction to Kubernetes (LFS158) & Cilium (LFS146)</h3>
+                    <span class="issuer">The Linux Foundation</span>
+                    <span class="issue-date">March 2025</span>
+                    <p>Fundamentals of container orchestration with Kubernetes and advanced networking with Cilium.</p>
+                </div>
+
+                <div class="card certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Lightbend Reactive Systems</h3>
+                    <span class="issuer">Lightbend</span>
+                    <span class="issue-date">December 2024</span>
+                    <p>Focus on building reactive, message-driven, and distributed systems in production environments.</p>
+                </div>
+
+                <div class="card certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Cisco Networking Academy</h3>
+                    <span class="issuer">Cisco</span>
+                    <span class="issue-date">December 2024</span>
+                    <p>Comprehensive training in networking fundamentals, routing, switching, and advanced network security.</p>
+                </div>
+
+                <div class="card certification-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3>Scrum & Six Sigma Certifications</h3>
+                    <span class="issuer">Certiprof</span>
+                    <span class="issue-date">December 2024</span>
+                    <p>Agile methodologies, Scrum practices, and Six Sigma process improvement methods.</p>
+                </div>
+
+                <div class="card certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Cambridge B2 First</h3>
+                    <span class="issuer">Cambridge English</span>
+                    <span class="issue-date">April 2019</span>
+                    <p>English language certification demonstrating proficiency in reading, writing, and speaking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Achievements</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="achievements-list">
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Top 50 STEM Students at UniPD</h3>
+                        <p>Awarded 39th place out of 300 students in 2024/2025</p>
+                    </div>
+                </div>
+
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <div class="achievement-content">
+                        <h3>Second Place in "Accattivante ed Accessibile" Competition</h3>
+                        <p>Recognition for web accessibility design (December 2022)</p>
+                    </div>
+                </div>
+
+                <div class="achievement-item">
+                    <div class="achievement-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="achievement-content">
+                      <h3>Multiple Academic Merit Scholarships</h3>
+                      <p>Recognized for excellence in academic performance</p>
+                  </div>
+              </div>
+
+              <div class="achievement-item">
+                  <div class="achievement-icon">
+                      <i class="fas fa-fist-raised"></i>
+                  </div>
+                  <div class="achievement-content">
+                      <h3>Bronze Medals in Karate</h3>
+                      <p>Bronze medals and a cup in interregional karate competitions</p>
+                  </div>
+              </div>
+
+              <div class="achievement-item">
+                  <div class="achievement-icon">
+                      <i class="fas fa-code-branch"></i>
+                  </div>
+                  <div class="achievement-content">
+                      <h3>Top GitHub Committer</h3>
+                      <p>Recognized among top committers during college years</p>
+                  </div>
+              </div>
           </div>
-          <h4 class="text-center mt-3 font-semibold text-sm">Frontend Web</h4>
-          <button 
-            class="text-xs text-purple-300 hover:text-purple-400 mt-2 block mx-auto" 
-            onclick="toggleSubskills('frontendSubskills')"
-          >
-            Show More
-          </button>
-          <div id="frontendSubskills" class="subskills hidden max-h-0 mt-2 text-xs text-gray-300">
-            <p>HTML, CSS, SASS, Bootstrap</p>
-            <p>Accessibility & Responsive Design</p>
-          </div>
-        </div>
-        <!-- Another grouped skill -->
-        <div class="bg-gray-800 p-4 rounded hover-lift transition relative">
-          <div class="flex justify-center">
-            <img src="https://skillicons.dev/icons?i=react,angular,wordpress" alt="React/Angular/WP" class="w-8 h-8" />
-          </div>
-          <h4 class="text-center mt-3 font-semibold text-sm">Frameworks (Web)</h4>
-          <button 
-            class="text-xs text-purple-300 hover:text-purple-400 mt-2 block mx-auto" 
-            onclick="toggleSubskills('frameworkSubskills')"
-          >
-            Show More
-          </button>
-          <div id="frameworkSubskills" class="subskills hidden max-h-0 mt-2 text-xs text-gray-300">
-            <p>React, Angular, WordPress</p>
-            <p>SPA, SSR, Theming, Plugins</p>
-          </div>
-        </div>
-        <!-- Add more single or grouped skill cards as needed... -->
-        <div class="bg-gray-800 p-4 rounded hover-lift transition relative">
-          <div class="flex justify-center">
-            <img src="https://skillicons.dev/icons?i=c,cpp" alt="C/C++" class="w-8 h-8" />
-          </div>
-          <h4 class="text-center mt-3 font-semibold text-sm">C/C++</h4>
-        </div>
-        <div class="bg-gray-800 p-4 rounded hover-lift transition relative">
-          <div class="flex justify-center">
-            <img src="https://skillicons.dev/icons?i=js,ts" alt="JS/TS" class="w-8 h-8" />
-          </div>
-          <h4 class="text-center mt-3 font-semibold text-sm">JavaScript / TypeScript</h4>
-        </div>
-        <div class="bg-gray-800 p-4 rounded hover-lift transition relative">
-          <div class="flex justify-center">
-            <img src="https://skillicons.dev/icons?i=mysql,postgres,heroku,netlify,aws" alt="DB/Cloud" class="w-8 h-8" />
-          </div>
-          <h4 class="text-center mt-3 font-semibold text-sm">DB &amp; Cloud</h4>
-          <button 
-            class="text-xs text-purple-300 hover:text-purple-400 mt-2 block mx-auto" 
-            onclick="toggleSubskills('dbCloudSubskills')"
-          >
-            Show More
-          </button>
-          <div id="dbCloudSubskills" class="subskills hidden max-h-0 mt-2 text-xs text-gray-300">
-            <p>MySQL, PostgreSQL, MongoDB</p>
-            <p>AWS, Heroku, Netlify</p>
-          </div>
-        </div>
-        <div class="bg-gray-800 p-4 rounded hover-lift transition relative">
-          <div class="flex justify-center">
-            <img src="https://skillicons.dev/icons?i=docker,jenkins,ansible,googlecloud" alt="DevOps" class="w-8 h-8" />
-          </div>
-          <h4 class="text-center mt-3 font-semibold text-sm">DevOps Tools</h4>
-          <button 
-            class="text-xs text-purple-300 hover:text-purple-400 mt-2 block mx-auto" 
-            onclick="toggleSubskills('devopsSubskills')"
-          >
-            Show More
-          </button>
-          <div id="devopsSubskills" class="subskills hidden max-h-0 mt-2 text-xs text-gray-300">
-            <p>Docker, Jenkins, Ansible, GCP</p>
-            <p>CI/CD, Containers, Automation</p>
-          </div>
-        </div>
-        <!-- Continue adding more skill cards as desired... -->
       </div>
-    </div>
-  </section>
-
-  <!-- Projects Section (4 visible, then collapsible) -->
-  <section id="projects" class="container mx-auto px-6 py-12">
-    <h2 class="text-2xl font-bold text-center neon-text mb-6">Projects</h2>
-    <!-- 2x2 grid for the first 4 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="projectsGrid">
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">Event Analyzer (03/2025)</h3>
-        <p class="text-gray-200 text-sm mb-2">
-          Reactive, real-time event processing system with Spring WebFlux, MongoDB, and Redis. Implements intelligent caching and secure REST APIs.
-        </p>
-        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">SystemFX (03/2025)</h3>
-        <p class="text-gray-200 text-sm mb-2">
-          Advanced F# framework for functional data stream processing with asynchronous runtime and pure functional pipelines.
-        </p>
-        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">FlutterRustImageFX (02/2025 - 03/2025)</h3>
-        <p class="text-gray-200 text-sm mb-2">
-          Cross-platform image editing app using Flutter for UI and Rust/WebAssembly for high-performance image filters.
-        </p>
-        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">Circuit Board Drilling Optimization (10/2024 - 01/2025)</h3>
-        <p class="text-gray-200 text-sm mb-2">
-          Implemented exact (CPLEX) and metaheuristic (Tabu Search) solutions for PCB drilling, boosting efficiency by up to 84%.
-        </p>
-        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
-      </div>
-    </div>
-
-    <!-- Hidden projects -->
-    <div id="projectsHidden" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 collapse hidden">
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">IT Service Management - Bank Decommissioning (06/2024 - 09/2024)</h3>
-        <p class="text-gray-200 text-sm mb-2">
-          Decommissioning legacy IT services using ITIL v4. Focused on connectivity transitions, best practices, and thorough documentation.
-        </p>
-        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">UAV Route Planning Strategies (07/2024 - 09/2024)</h3>
-        <p class="text-gray-200 text-sm mb-2">
-          Research and implementation of efficient UAV routing for complex environments to maximize coverage and operational efficiency.
-        </p>
-        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">DocHub (04/2024 - 07/2024)</h3>
-        <p class="text-gray-200 text-sm mb-2">
-          Startup simulation project simplifying digital document retrieval and management across Italy.
-        </p>
-        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">NIST CSF Security Report (04/2024 - 06/2024)</h3>
-        <p class="text-gray-200 text-sm mb-2">
-          In-depth evaluation report of NIST Cybersecurity Framework 2.0 applied to healthcare systems, with actionable insights.
-        </p>
-        <a href="#" class="text-purple-400 hover:underline text-sm">View Report</a>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">PLA Bluetooth Environment (12/2023 - 06/2024)</h3>
-        <p class="text-gray-200 text-sm mb-2">
-          Security project implementing physical layer authentication for Bluetooth wireless channels.
-        </p>
-        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">Web Information Management (11/2023 - 01/2024)</h3>
-        <p class="text-gray-200 text-sm mb-2">
-          Usability and design analysis for the University of Padua website, focusing on accessibility and modern web standards.
-        </p>
-        <a href="#" class="text-purple-400 hover:underline text-sm">View Report</a>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">Il Gomitolo delle Magie - La Fattoria al Laghetto (05/2023 - 11/2023)</h3>
-        <p class="text-gray-200 text-sm mb-2">
-          Developed custom WordPress websites for organizations with a focus on accessible, user-friendly design.
-        </p>
-        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">Translatify (10/2022 - 06/2023)</h3>
-        <p class="text-gray-200 text-sm mb-2">
-          Multi-tenant translation platform for simultaneous online content translation.
-        </p>
-        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">VerifiedMovies (03/2023 - 06/2023)</h3>
-        <p class="text-gray-200 text-sm mb-2">
-          Blockchain-based authentication project leveraging Verifiable Credentials and Zero-Knowledge Proofs.
-        </p>
-        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">Fog Festival (03/2022 - 05/2022)</h3>
-        <p class="text-gray-200 text-sm mb-2">
-          Database management system for a music festival, using SQL and PostgreSQL to handle complex event data.
-        </p>
-        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">Qt Charts CR (09/2020 - 02/2021)</h3>
-        <p class="text-gray-200 text-sm mb-2">
-          Developed an application with Qt to visualize charts and manage JSON/XML data with enhanced interactivity.
-        </p>
-        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
-      </div>
-    </div>
-
-    <!-- Button -->
-    <div class="text-center mt-6">
-      <button 
-        id="projectsToggleBtn" 
-        class="bg-purple-600 hover:bg-purple-500 text-white px-4 py-2 rounded-full font-semibold transition"
-        onclick="toggleProjects()"
-      >
-        Show More Projects
-      </button>
-    </div>
-  </section>
-
-  <!-- Education Section -->
-  <section id="education" class="bg-gray-800 py-12">
-    <div class="container mx-auto px-6">
-      <h2 class="text-2xl font-bold text-center neon-text mb-6">Education</h2>
-      <div class="space-y-6 max-w-3xl mx-auto">
-        <div>
-          <h3 class="text-xl font-bold text-purple-300">M.Sc. in Computer Science</h3>
-          <p class="text-gray-400 text-sm">University of Padua (2023 - 2025)</p>
-          <p class="text-gray-200 mt-1 text-sm">
-            Major in Internet, Mobile and Security – courses include Mobile Application Security, Advanced Cryptography, Secure App Development, and Big Data Management.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-xl font-bold text-purple-300">B.Sc. in Computer Science</h3>
-          <p class="text-gray-400 text-sm">University of Padua (2020 - 2023)</p>
-          <p class="text-gray-200 mt-1 text-sm">
-            Focused on algorithms, object-oriented programming (C++/Qt), concurrent programming with Java, SQL-based database management, and accessible web development.
-          </p>
-        </div>
-        <div>
-          <h3 class="text-xl font-bold text-purple-300">Computer Science Diploma</h3>
-          <p class="text-gray-400 text-sm">I.I.S. Polo Tecnico di Adria (2015 - 2020)</p>
-          <p class="text-gray-200 mt-1 text-sm">
-            Specialized in programming (C, Java), network design, HTML/CSS/JS/PHP, and IT project management – with top marks.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Certifications Section -->
-  <section id="certifications" class="container mx-auto px-6 py-12">
-    <h2 class="text-2xl font-bold text-center neon-text mb-6">Certifications</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <!-- Just list them all here; no need for "Show More" if they're not too many. -->
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">
-          Design Thinking &amp; Service Design / Gamification / UX-UI / Public Speaking
-        </h3>
-        <p class="text-gray-400 text-sm">Fastweb Digital Academy (Mar 2025)</p>
-        <p class="text-gray-200 text-sm mt-2">
-          A comprehensive suite covering user-centric design, gamification, and advanced communication for the web.
-        </p>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">
-          Introduction to Kubernetes (LFS158) &amp; Introduction to Cilium (LFS146)
-        </h3>
-        <p class="text-gray-400 text-sm">The Linux Foundation (Mar 2025)</p>
-        <p class="text-gray-200 text-sm mt-2">
-          Fundamentals of container orchestration with Kubernetes and advanced networking with Cilium.
-        </p>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">Lightbend Reactive Systems</h3>
-        <p class="text-gray-400 text-sm">(Dec 2024)</p>
-        <p class="text-gray-200 text-sm mt-2">
-          Focus on building reactive, message-driven, and distributed systems in production environments.
-        </p>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">Cisco Networking Academy</h3>
-        <p class="text-gray-400 text-sm">(Dec 2024)</p>
-        <p class="text-gray-200 text-sm mt-2">
-          Comprehensive training in networking fundamentals, routing, switching, and advanced network security.
-        </p>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">MATLAB Onramp</h3>
-        <p class="text-gray-400 text-sm">(Aug 2022)</p>
-        <p class="text-gray-200 text-sm mt-2">
-          Introduction to MATLAB, covering basic programming and data visualization techniques.
-        </p>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">Scrum &amp; Six Sigma Certifications</h3>
-        <p class="text-gray-400 text-sm">(Dec 2024)</p>
-        <p class="text-gray-200 text-sm mt-2">
-          Agile methodologies, Scrum practices, and Six Sigma process improvement methods.
-        </p>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">Cambridge B2 First</h3>
-        <p class="text-gray-400 text-sm">(Apr 2019)</p>
-        <p class="text-gray-200 text-sm mt-2">
-          English language certification demonstrating proficiency in reading, writing, and speaking.
-        </p>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">B1 GESE Trinity</h3>
-        <p class="text-gray-400 text-sm">(Jun 2018)</p>
-        <p class="text-gray-200 text-sm mt-2">
-          English speaking exam certification from Trinity College London.
-        </p>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">Google Digital Marketing</h3>
-        <p class="text-gray-400 text-sm">(Jul 2020)</p>
-        <p class="text-gray-200 text-sm mt-2">
-          Training in digital marketing strategies and online advertising fundamentals.
-        </p>
-      </div>
-      <div class="bg-gray-800 p-4 rounded hover-lift transition">
-        <h3 class="text-lg font-bold text-purple-300 mb-1">Hubspot Academy</h3>
-        <p class="text-gray-400 text-sm">(Jul - Sep 2020)</p>
-        <p class="text-gray-200 text-sm mt-2">
-          Courses on inbound marketing, sales, and CRM best practices.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Achievements Section -->
-  <section id="achievements" class="bg-gray-800 py-12">
-    <div class="container mx-auto px-6">
-      <h2 class="text-2xl font-bold text-center neon-text mb-6">Achievements</h2>
-      <ul class="list-disc list-inside text-gray-200 space-y-2 max-w-2xl mx-auto text-sm">
-        <li>Awarded among the Top 50 STEM Students at UniPD (39th out of 300) – 2024/2025</li>
-        <li>Second Place in the "Accattivante ed Accessibile" Competition (Dec 2022)</li>
-        <li>Multiple Academic Merit Scholarships</li>
-        <li>Bronze medals and a cup in interregional karate competitions</li>
-        <li>Recognized among top committers during my college years</li>
-      </ul>
-    </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="bg-gradient-to-r from-purple-700 to-indigo-900 py-12">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-2xl font-bold mb-4 neon-text">Get In Touch</h2>
-      <p class="text-gray-100 mb-6 text-sm md:text-base">
-        For collaborations, tutoring, or project inquiries, feel free to reach out.
-      </p>
-      <div class="flex flex-col md:flex-row justify-center space-y-3 md:space-y-0 md:space-x-6 text-lg font-semibold">
-        <a href="mailto:rovestigabriel@gmail.com" class="hover:text-purple-300">Email</a>
-        <a href="https://www.linkedin.com/in/gabriel-rovesti-601404220" target="_blank" class="hover:text-purple-300">LinkedIn</a>
-        <a href="https://github.com/gabrielrovesti" target="_blank" class="hover:text-purple-300">GitHub</a>
+  <section id="contact" class="contact section-padding">
+      <div class="container">
+          <div class="section-header">
+              <h2 class="section-title">Get In Touch</h2>
+              <div class="underline"></div>
+          </div>
+          <div class="contact-content">
+              <div class="contact-text">
+                  <p>For collaborations, tutoring opportunities, or project inquiries, feel free to reach out through any of the channels below.</p>
+              </div>
+              <div class="contact-methods">
+                  <a href="mailto:rovestigabriel@gmail.com" class="contact-method email-btn">
+                      <i class="fas fa-envelope"></i>
+                      <span>Email</span>
+                  </a>
+                  <a href="https://www.linkedin.com/in/gabriel-rovesti-601404220/" class="contact-method linkedin-btn" target="_blank">
+                      <i class="fab fa-linkedin"></i>
+                      <span>LinkedIn</span>
+                  </a>
+                  <a href="https://github.com/gabrielrovesti" class="contact-method github-btn" target="_blank">
+                      <i class="fab fa-github"></i>
+                      <span>GitHub</span>
+                  </a>
+              </div>
+          </div>
       </div>
-    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 py-3">
-    <div class="container mx-auto px-6 text-center text-gray-500 text-xs">
-      &copy; 2025 Gabriel Rovesti. All rights reserved.
-    </div>
+  <footer class="footer">
+      <div class="container">
+          <div class="footer-content">
+              <p class="copyright">&copy; <span id="current-year"></span> Gabriel Rovesti. All rights reserved.</p>
+              <div class="social-links">
+                  <a href="https://www.linkedin.com/in/gabriel-rovesti-601404220/" target="_blank" aria-label="LinkedIn">
+                      <i class="fab fa-linkedin"></i>
+                  </a>
+                  <a href="https://github.com/gabrielrovesti" target="_blank" aria-label="GitHub">
+                      <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://www.instagram.com/grovesti1/" target="_blank" aria-label="Instagram">
+                      <i class="fab fa-instagram"></i>
+                  </a>
+              </div>
+          </div>
+      </div>
   </footer>
 
-  <!-- JavaScript for Collapsible Sections & Skill Expansions -->
-  <script>
-    // Toggle "Show More" for Experiences
-    function toggleExperience() {
-      const hiddenExp = document.getElementById('experienceHidden');
-      const btn = document.getElementById('experienceToggleBtn');
-      if (hiddenExp.classList.contains('hidden')) {
-        hiddenExp.classList.remove('hidden');
-        hiddenExp.classList.remove('max-h-0');
-        btn.textContent = 'Show Less Experiences';
-      } else {
-        hiddenExp.classList.add('hidden');
-        hiddenExp.classList.add('max-h-0');
-        btn.textContent = 'Show More Experiences';
-      }
-    }
+  <!-- Back to top button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+      <i class="fas fa-arrow-up"></i>
+  </button>
 
-    // Toggle "Show More" for Projects
-    function toggleProjects() {
-      const hiddenProj = document.getElementById('projectsHidden');
-      const btn = document.getElementById('projectsToggleBtn');
-      if (hiddenProj.classList.contains('hidden')) {
-        hiddenProj.classList.remove('hidden');
-        hiddenProj.classList.remove('max-h-0');
-        btn.textContent = 'Show Less Projects';
-      } else {
-        hiddenProj.classList.add('hidden');
-        hiddenProj.classList.add('max-h-0');
-        btn.textContent = 'Show More Projects';
-      }
-    }
-
-    // Toggle subskills for grouped skills
-    function toggleSubskills(id) {
-      const section = document.getElementById(id);
-      if (section.classList.contains('hidden')) {
-        section.classList.remove('hidden');
-        section.classList.remove('max-h-0');
-      } else {
-        section.classList.add('hidden');
-        section.classList.add('max-h-0');
-      }
-    }
-  </script>
+  <!-- JavaScript -->
+  <script src="./js/main.js"></script>
 </body>
 </html>
