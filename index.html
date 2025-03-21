@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gabriel Rovesti - Portfolio</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom Effects */
+    .neon-text {
+      text-shadow: 0 0 6px rgba(255,255,255,0.8);
+    }
+    .fade-in {
+      animation: fadeIn 1s ease-in forwards;
+      opacity: 0;
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    .hover-lift:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    .collapse {
+      transition: max-height 0.5s ease-in-out;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body class="bg-gray-900 text-white font-sans leading-relaxed">
+
+  <!-- Navigation -->
+  <header class="fixed w-full bg-gray-900 bg-opacity-90 backdrop-blur-sm z-50 shadow-sm">
+    <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+      <div class="text-xl font-bold neon-text">Gabriel Rovesti</div>
+      <ul class="flex space-x-5 text-sm font-semibold">
+        <li><a href="#home" class="hover:text-purple-400">Home</a></li>
+        <li><a href="#about" class="hover:text-purple-400">About</a></li>
+        <li><a href="#experience" class="hover:text-purple-400">Experience</a></li>
+        <li><a href="#skills" class="hover:text-purple-400">Skills</a></li>
+        <li><a href="#projects" class="hover:text-purple-400">Projects</a></li>
+        <li><a href="#education" class="hover:text-purple-400">Education</a></li>
+        <li><a href="#certifications" class="hover:text-purple-400">Certifications</a></li>
+        <li><a href="#achievements" class="hover:text-purple-400">Achievements</a></li>
+        <li><a href="#contact" class="hover:text-purple-400">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section (Compact) -->
+  <section id="home" class="pt-20 pb-10 bg-gradient-to-r from-purple-700 via-indigo-800 to-gray-900 fade-in">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+      <!-- Text & Typing Effect -->
+      <div class="md:w-1/2">
+        <h1 class="text-3xl md:text-4xl font-extrabold mb-2 neon-text">Hi, I'm Gabriel</h1>
+        <p class="text-lg md:text-xl font-semibold text-gray-100 mb-3">
+          M.Sc. Computer Science Student<br/>
+          <span class="font-normal text-gray-300">Bridging academic excellence with real-world innovation.</span>
+        </p>
+        <!-- Dynamic Typing Effect -->
+        <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=20&duration=3000&pause=1000&color=FFFFFF&center=false&vCenter=true&width=500&lines=Full-Stack+Developer;Cybersecurity+Enthusiast;Tutor+%26+Teacher;Blockchain+%26+Cloud+Adventurer" alt="Typing SVG" class="mb-3" />
+        <p class="text-gray-200 text-sm leading-snug mb-3">
+          From reactive systems to blockchain-based security, I build robust, scalable, and user-centric solutions.
+        </p>
+        <a href="#contact" class="inline-block bg-purple-600 hover:bg-purple-500 text-white px-5 py-2 rounded-full font-semibold transition">
+          Get in Touch
+        </a>
+      </div>
+      <!-- Photo -->
+      <div class="md:w-1/2 mt-8 md:mt-0 flex justify-center">
+        <img src="gabriel.jpg" alt="Gabriel Rovesti" class="w-56 h-56 object-cover rounded-full shadow-lg ring-4 ring-purple-600" />
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container mx-auto px-6 py-12">
+    <div class="md:flex md:items-center">
+      <div class="md:w-1/2 mb-6 md:mb-0">
+        <h2 class="text-2xl font-bold neon-text mb-4">About Me</h2>
+        <p class="text-gray-200 mb-3">
+          I'm a <span class="text-purple-400 font-semibold">Full-Stack Developer</span> and <span class="text-purple-400 font-semibold">Educator</span> specializing in cybersecurity, software engineering, and emerging tech.
+        </p>
+        <p class="text-gray-200">
+          I explore cutting-edge solutions—from real-time reactive systems to blockchain applications—and love empowering others through teaching and mentorship.
+        </p>
+      </div>
+      <div class="md:w-1/2 md:pl-12">
+        <h3 class="text-xl font-bold neon-text mb-2">Focus Areas</h3>
+        <ul class="list-disc list-inside text-gray-300 space-y-1">
+          <li>Cybersecurity & Cloud Computing</li>
+          <li>DevOps & CI/CD</li>
+          <li>Blockchain & Decentralized Apps</li>
+          <li>Software Architecture & Engineering</li>
+          <li>Inclusive Teaching & Mentorship</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section (All Experiences Collapsible) -->
+  <section id="experience" class="bg-gray-800 py-12">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl font-bold text-center neon-text mb-6">Experience</h2>
+      <div id="experienceList" class="space-y-6">
+        <!-- Experience 1 -->
+        <div class="bg-gray-700 p-4 rounded hover-lift transition">
+          <h3 class="text-xl font-semibold text-purple-300">Docente di Sistemi e Reti</h3>
+          <p class="text-sm text-gray-400">ITI Galileo Ferraris, 09/2024 - 06/2025</p>
+          <p class="mt-2 text-gray-200 text-sm">
+            Delivered both theoretical lectures and practical exercises on network architectures, protocols, and security for high school students.
+          </p>
+        </div>
+        <!-- Experience 2 -->
+        <div class="bg-gray-700 p-4 rounded hover-lift transition">
+          <h3 class="text-xl font-semibold text-purple-300">Tutor di Coordinamento e Tutor Didattico di Automi e Linguaggi Formali</h3>
+          <p class="text-sm text-gray-400">University of Padua, 01/2025 - Present</p>
+          <p class="mt-2 text-gray-200 text-sm">
+            Coordinated tutor teams and supported the "Automi e Linguaggi Formali" course through lectures, exercises, and direct student mentoring.
+          </p>
+        </div>
+        <!-- Experience 3 -->
+        <div class="bg-gray-700 p-4 rounded hover-lift transition">
+          <h3 class="text-xl font-semibold text-purple-300">Tutor Didattico di Computability</h3>
+          <p class="text-sm text-gray-400">University of Padua, 09/2024 - 01/2025</p>
+          <p class="mt-2 text-gray-200 text-sm">
+            Assisted in delivering the Computability course for the M.Sc. in Computer Science, entirely in English, including lectures and project guidance.
+          </p>
+        </div>
+        <!-- Experience 4 -->
+        <div class="bg-gray-700 p-4 rounded hover-lift transition">
+          <h3 class="text-xl font-semibold text-purple-300">Tutor per l’Inclusione e Tutor d’Ufficio</h3>
+          <p class="text-sm text-gray-400">University of Padua, 11/2023 - Present</p>
+          <p class="mt-2 text-gray-200 text-sm">
+            Provided specialized tutoring support and managed exam arrangements for the Inclusion sector, ensuring personalized learning experiences.
+          </p>
+        </div>
+        <!-- Experience 5 -->
+        <div class="bg-gray-700 p-4 rounded hover-lift transition">
+          <h3 class="text-xl font-semibold text-purple-300">Insegnante Privato &amp; Assistente Informatico</h3>
+          <p class="text-sm text-gray-400">Freelance, 02/2016 - Present</p>
+          <p class="mt-2 text-gray-200 text-sm">
+            Conducted private tutoring across a range of subjects (technical, mathematical, linguistic) and provided IT support and website development (WordPress/e-commerce) for various clients.
+          </p>
+        </div>
+        <!-- Experience 6 -->
+        <div class="bg-gray-700 p-4 rounded hover-lift transition">
+          <h3 class="text-xl font-semibold text-purple-300">Stagista Curriculare</h3>
+          <p class="text-sm text-gray-400">Sync Lab S.r.l., 03/2023 - 06/2023</p>
+          <p class="mt-2 text-gray-200 text-sm">
+            Developed a Proof of Concept (POC) for a DApp on Ethereum using EthersJS/Web3JS, integrating SSI, DID, and Zero-Knowledge Proof standards.
+          </p>
+        </div>
+        <!-- Experience 7 -->
+        <div class="bg-gray-700 p-4 rounded hover-lift transition">
+          <h3 class="text-xl font-semibold text-purple-300">Responsabile Servizio Clienti</h3>
+          <p class="text-sm text-gray-400">Clesp S.r.l., 07/2020 - 10/2021</p>
+          <p class="mt-2 text-gray-200 text-sm">
+            Managed customer service operations for major supermarket chains and affiliated stores, including front office support, team coordination, and database management.
+          </p>
+        </div>
+        <!-- Experience 8 -->
+        <div class="bg-gray-700 p-4 rounded hover-lift transition">
+          <h3 class="text-xl font-semibold text-purple-300">Configuratore di Applicazioni Informatiche</h3>
+          <p class="text-sm text-gray-400">Digife S.r.l., 01/2019 - 02/2019</p>
+          <p class="mt-2 text-gray-200 text-sm">
+            Created custom WordPress websites and e-commerce plugins, managed plugin integrations, and designed newsletters for enhanced digital marketing.
+          </p>
+        </div>
+        <!-- Experience 9 -->
+        <div class="bg-gray-700 p-4 rounded hover-lift transition">
+          <h3 class="text-xl font-semibold text-purple-300">Assistente Amministrativo</h3>
+          <p class="text-sm text-gray-400">CIERRE Elettronica, 06/2018 - 07/2018</p>
+          <p class="mt-2 text-gray-200 text-sm">
+            Provided administrative support during an internship, including document archiving and equipment management.
+          </p>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <button id="toggleExperienceBtn" class="bg-purple-600 hover:bg-purple-500 text-white px-4 py-2 rounded-full font-semibold transition" onclick="toggleExperience()">
+          Show More Experiences
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section (All Skills) -->
+  <section id="skills" class="py-12 bg-gray-900">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl font-bold text-center neon-text mb-6">Skills</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        <!-- Each skill card below shows an icon and label. Adjust the icon URLs as needed. -->
+        <div class="bg-gray-800 p-3 rounded hover-lift transition flex flex-col items-center">
+          <img src="https://skillicons.dev/icons?i=java" alt="Java" class="w-8 h-8" />
+          <span class="text-xs mt-1">Java</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded hover-lift transition flex flex-col items-center">
+          <img src="https://skillicons.dev/icons?i=python" alt="Python" class="w-8 h-8" />
+          <span class="text-xs mt-1">Python</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded hover-lift transition flex flex-col items-center">
+          <img src="https://skillicons.dev/icons?i=c,cpp" alt="C/C++" class="w-8 h-8" />
+          <span class="text-xs mt-1">C/C++</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded hover-lift transition flex flex-col items-center">
+          <img src="https://skillicons.dev/icons?i=js,ts" alt="JS/TS" class="w-8 h-8" />
+          <span class="text-xs mt-1">JS/TS</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded hover-lift transition flex flex-col items-center">
+          <img src="https://skillicons.dev/icons?i=php" alt="PHP" class="w-8 h-8" />
+          <span class="text-xs mt-1">PHP</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded hover-lift transition flex flex-col items-center">
+          <img src="https://skillicons.dev/icons?i=cs" alt="C#" class="w-8 h-8" />
+          <span class="text-xs mt-1">C#</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded hover-lift transition flex flex-col items-center">
+          <img src="https://skillicons.dev/icons?i=rust,solidity" alt="Rust/Solidity" class="w-8 h-8" />
+          <span class="text-xs mt-1">Rust/Solidity</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded hover-lift transition flex flex-col items-center">
+          <img src="https://skillicons.dev/icons?i=latex" alt="LaTeX" class="w-8 h-8" />
+          <span class="text-xs mt-1">LaTeX</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded hover-lift transition flex flex-col items-center">
+          <img src="https://skillicons.dev/icons?i=arduino" alt="Arduino" class="w-8 h-8" />
+          <span class="text-xs mt-1">Arduino</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded hover-lift transition flex flex-col items-center">
+          <img src="https://skillicons.dev/icons?i=matlab" alt="MATLAB" class="w-8 h-8" />
+          <span class="text-xs mt-1">MATLAB</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded hover-lift transition flex flex-col items-center">
+          <img src="https://skillicons.dev/icons?i=kotlin,dart" alt="Kotlin/Dart" class="w-8 h-8" />
+          <span class="text-xs mt-1">Kotlin/Dart</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded hover-lift transition flex flex-col items-center">
+          <img src="https://skillicons.dev/icons?i=html,css,sass,bootstrap" alt="HTML/CSS" class="w-8 h-8" />
+          <span class="text-xs mt-1">HTML/CSS</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded hover-lift transition flex flex-col items-center">
+          <img src="https://skillicons.dev/icons?i=react,angular,wordpress" alt="React/Angular/WordPress" class="w-8 h-8" />
+          <span class="text-xs mt-1">React/Angular/WP</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded hover-lift transition flex flex-col items-center">
+          <img src="https://skillicons.dev/icons?i=mysql,postgres,heroku,netlify,aws" alt="DB & Cloud" class="w-8 h-8" />
+          <span class="text-xs mt-1">DB/Cloud</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded hover-lift transition flex flex-col items-center">
+          <img src="https://skillicons.dev/icons?i=qt,androidstudio,dotnet,flutter" alt="Frameworks" class="w-8 h-8" />
+          <span class="text-xs mt-1">Frameworks</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded hover-lift transition flex flex-col items-center">
+          <img src="https://skillicons.dev/icons?i=docker,jenkins,ansible,googlecloud" alt="DevOps" class="w-8 h-8" />
+          <span class="text-xs mt-1">DevOps</span>
+        </div>
+        <div class="bg-gray-800 p-3 rounded hover-lift transition flex flex-col items-center">
+          <img src="https://skillicons.dev/icons?i=vscode,visualstudio,bash,wasm,graphql" alt="Others" class="w-8 h-8" />
+          <span class="text-xs mt-1">Others</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section (All Projects Collapsible) -->
+  <section id="projects" class="container mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-center neon-text mb-6">Projects</h2>
+    <div id="projectList" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- List every project -->
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">Event Analyzer (03/2025)</h3>
+        <p class="text-gray-200 text-sm mb-2">
+          Reactive, real-time event processing system with Spring WebFlux, MongoDB, and Redis. Implements intelligent caching and secure REST APIs.
+        </p>
+        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">SystemFX (03/2025)</h3>
+        <p class="text-gray-200 text-sm mb-2">
+          Advanced F# framework for functional data stream processing with asynchronous runtime support and pure functional pipelines.
+        </p>
+        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">FlutterRustImageFX (02/2025 - 03/2025)</h3>
+        <p class="text-gray-200 text-sm mb-2">
+          Cross-platform image editing application using Flutter for UI and Rust/WebAssembly for high-performance image filters.
+        </p>
+        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">Circuit Board Drilling Optimization (10/2024 - 01/2025)</h3>
+        <p class="text-gray-200 text-sm mb-2">
+          Implemented exact (CPLEX) and metaheuristic (Tabu Search) approaches to optimize PCB drilling sequences, improving efficiency by up to 84%.
+        </p>
+        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">IT Service Management - Bank Decommissioning (06/2024 - 09/2024)</h3>
+        <p class="text-gray-200 text-sm mb-2">
+          Project focused on decommissioning legacy IT services using ITIL v4 methodologies, ensuring secure connectivity transitions and comprehensive documentation.
+        </p>
+        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">UAV Route Planning Strategies (07/2024 - 09/2024)</h3>
+        <p class="text-gray-200 text-sm mb-2">
+          Research and implementation of efficient UAV routing for complex environments to maximize coverage and operational efficiency.
+        </p>
+        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">DocHub (04/2024 - 07/2024)</h3>
+        <p class="text-gray-200 text-sm mb-2">
+          Startup simulation project simplifying digital document retrieval and management across Italy.
+        </p>
+        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">NIST CSF Security Report (04/2024 - 06/2024)</h3>
+        <p class="text-gray-200 text-sm mb-2">
+          In-depth evaluation report of the NIST Cybersecurity Framework 2.0 as applied to healthcare systems, with actionable insights.
+        </p>
+        <a href="#" class="text-purple-400 hover:underline text-sm">View Report</a>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">PLA Bluetooth Environment (12/2023 - 06/2024)</h3>
+        <p class="text-gray-200 text-sm mb-2">
+          Security project implementing physical layer authentication for Bluetooth wireless channels.
+        </p>
+        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">Web Information Management (11/2023 - 01/2024)</h3>
+        <p class="text-gray-200 text-sm mb-2">
+          Usability and design analysis for the University of Padua website, enhancing accessibility and modern web standards.
+        </p>
+        <a href="#" class="text-purple-400 hover:underline text-sm">View Report</a>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">Il Gomitolo delle Magie - La Fattoria al Laghetto (05/2023 - 11/2023)</h3>
+        <p class="text-gray-200 text-sm mb-2">
+          Developed custom WordPress websites for organizations with a focus on accessible and user-friendly design.
+        </p>
+        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">Translatify (10/2022 - 06/2023)</h3>
+        <p class="text-gray-200 text-sm mb-2">
+          Multi-tenant translation platform for simultaneous online content translation.
+        </p>
+        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">VerifiedMovies (03/2023 - 06/2023)</h3>
+        <p class="text-gray-200 text-sm mb-2">
+          Blockchain-based authentication project using Verifiable Credentials and Zero-Knowledge Proofs.
+        </p>
+        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">Fog Festival (03/2022 - 05/2022)</h3>
+        <p class="text-gray-200 text-sm mb-2">
+          Database management system for a music festival using SQL and PostgreSQL to manage event data.
+        </p>
+        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">Qt Charts CR (09/2020 - 02/2021)</h3>
+        <p class="text-gray-200 text-sm mb-2">
+          Developed an application with Qt to visualize charts and manage JSON/XML data with enhanced interactivity.
+        </p>
+        <a href="#" class="text-purple-400 hover:underline text-sm">View on GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="bg-gray-800 py-12">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl font-bold text-center neon-text mb-6">Education</h2>
+      <div class="space-y-6 max-w-3xl mx-auto">
+        <div>
+          <h3 class="text-xl font-bold text-purple-300">M.Sc. in Computer Science</h3>
+          <p class="text-gray-400 text-sm">University of Padua (2023 - 2025)</p>
+          <p class="text-gray-200 mt-1 text-sm">
+            Major in Internet, Mobile and Security – Courses include Mobile Application Security, Advanced Cryptography, Secure App Development, and Big Data Management.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-purple-300">B.Sc. in Computer Science</h3>
+          <p class="text-gray-400 text-sm">University of Padua (2020 - 2023)</p>
+          <p class="text-gray-200 mt-1 text-sm">
+            Focused on algorithms, object-oriented programming (C++/Qt), concurrent programming with Java, SQL-based database management, and accessible web development.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-purple-300">Computer Science Diploma</h3>
+          <p class="text-gray-400 text-sm">I.I.S. Polo Tecnico di Adria (2015 - 2020)</p>
+          <p class="text-gray-200 mt-1 text-sm">
+            Specialized in programming (C, Java), network design, HTML/CSS/JS/PHP, and IT project management – achieving top marks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="container mx-auto px-6 py-12">
+    <h2 class="text-2xl font-bold text-center neon-text mb-6">Certifications</h2>
+    <div id="certList" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- Certification 1 -->
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">
+          Design Thinking &amp; Service Design / Gamification / UX-UI / Public Speaking
+        </h3>
+        <p class="text-gray-400 text-sm">Fastweb Digital Academy (Mar 2025)</p>
+        <p class="text-gray-200 text-sm mt-2">
+          A comprehensive suite covering user-centric design, gamification, and advanced communication for the web.
+        </p>
+      </div>
+      <!-- Certification 2 -->
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">
+          Introduction to Kubernetes (LFS158) &amp; Introduction to Cilium (LFS146)
+        </h3>
+        <p class="text-gray-400 text-sm">The Linux Foundation (Mar 2025)</p>
+        <p class="text-gray-200 text-sm mt-2">
+          Fundamentals of container orchestration with Kubernetes and advanced networking with Cilium.
+        </p>
+      </div>
+      <!-- Additional Certifications -->
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">
+          Lightbend Reactive Systems
+        </h3>
+        <p class="text-gray-400 text-sm">(Dec 2024)</p>
+        <p class="text-gray-200 text-sm mt-2">
+          Building reactive, message-driven systems in distributed environments.
+        </p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">
+          Cisco Networking Academy
+        </h3>
+        <p class="text-gray-400 text-sm">(Dec 2024)</p>
+        <p class="text-gray-200 text-sm mt-2">
+          Comprehensive training in networking fundamentals, routing, switching, and advanced network security.
+        </p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">
+          MATLAB Onramp
+        </h3>
+        <p class="text-gray-400 text-sm">(Aug 2022)</p>
+        <p class="text-gray-200 text-sm mt-2">
+          Introduction to MATLAB, covering basic programming and data visualization.
+        </p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">
+          Scrum &amp; Six Sigma Certifications
+        </h3>
+        <p class="text-gray-400 text-sm">(Dec 2024)</p>
+        <p class="text-gray-200 text-sm mt-2">
+          Certification in Agile methodologies, Scrum practices, and Six Sigma process improvements.
+        </p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">
+          Cambridge B2 First
+        </h3>
+        <p class="text-gray-400 text-sm">(Apr 2019)</p>
+        <p class="text-gray-200 text-sm mt-2">
+          English language certification demonstrating high proficiency in reading, writing, and speaking.
+        </p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">
+          B1 GESE Trinity
+        </h3>
+        <p class="text-gray-400 text-sm">(Jun 2018)</p>
+        <p class="text-gray-200 text-sm mt-2">
+          English speaking exam certification from Trinity College.
+        </p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">
+          Google Digital Marketing
+        </h3>
+        <p class="text-gray-400 text-sm">(Jul 2020)</p>
+        <p class="text-gray-200 text-sm mt-2">
+          Training in digital marketing strategies and online advertising.
+        </p>
+      </div>
+      <div class="bg-gray-800 p-4 rounded hover-lift transition">
+        <h3 class="text-lg font-bold text-purple-300 mb-1">
+          Hubspot Academy
+        </h3>
+        <p class="text-gray-400 text-sm">(Jul - Sep 2020)</p>
+        <p class="text-gray-200 text-sm mt-2">
+          Courses on inbound marketing, sales, and customer relationship management.
+        </p>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <button id="toggleCertBtn" class="bg-purple-600 hover:bg-purple-500 text-white px-4 py-2 rounded-full font-semibold transition" onclick="toggleCerts()">
+        Show More Certifications
+      </button>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section id="achievements" class="bg-gray-800 py-12">
+    <div class="container mx-auto px-6">
+      <h2 class="text-2xl font-bold text-center neon-text mb-6">Achievements</h2>
+      <ul class="list-disc list-inside text-gray-200 space-y-2 max-w-2xl mx-auto text-sm">
+        <li>Awarded among the Top 50 STEM Students at UniPD (39th out of 300) – 2024/2025</li>
+        <li>Second Place in the "Accattivante ed Accessibile" Competition (Dec 2022)</li>
+        <li>Multiple Academic Merit Scholarships</li>
+        <li>Bronze medals and a cup in interregional karate competitions</li>
+        <li>Recognized among top committers during my college years</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-gradient-to-r from-purple-700 to-indigo-900 py-12">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-2xl font-bold mb-4 neon-text">Get In Touch</h2>
+      <p class="text-gray-100 mb-6 text-sm md:text-base">
+        For collaborations, tutoring, or project inquiries, feel free to reach out.
+      </p>
+      <div class="flex flex-col md:flex-row justify-center space-y-3 md:space-y-0 md:space-x-6 text-lg font-semibold">
+        <a href="mailto:rovestigabriel@gmail.com" class="hover:text-purple-300">Email</a>
+        <a href="https://www.linkedin.com/in/gabriel-rovesti-601404220" target="_blank" class="hover:text-purple-300">LinkedIn</a>
+        <a href="https://github.com/gabrielrovesti" target="_blank" class="hover:text-purple-300">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-3">
+    <div class="container mx-auto px-6 text-center text-gray-500 text-xs">
+      &copy; 2025 Gabriel Rovesti. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- JavaScript for Collapsible Sections -->
+  <script>
+    // Toggle additional Certifications if any (example: button hides/shows extra certs)
+    function toggleCerts() {
+      const certs = document.getElementById('moreCerts');
+      const btn = document.getElementById('toggleCertBtn');
+      if(certs && certs.classList.contains('hidden')) {
+        certs.classList.remove('hidden');
+        btn.textContent = 'Show Less Certifications';
+      } else if(certs) {
+        certs.classList.add('hidden');
+        btn.textContent = 'Show More Certifications';
+      }
+    }
+    // (Optional) Similar toggle can be implemented for Experiences if you decide to hide some.
+    // In this version, all experiences are shown.
+  </script>
+</body>
+</html>
