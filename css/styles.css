@@ -1183,3 +1183,168 @@ nav {
         text-align: center;
     }
 }
+
+/* ===== NOTES SECTION ===== */
+.notes {
+    background-color: var(--dark-bg);
+    position: relative;
+}
+
+.notes-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--spacing-md);
+    color: var(--gray-text);
+}
+
+.notes-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.tab-btn {
+    background-color: var(--card-bg);
+    color: var(--gray-text);
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: var(--border-radius-md);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.tab-btn:hover {
+    background-color: var(--primary-dark);
+    color: var(--light-text);
+    transform: translateY(-2px);
+}
+
+.tab-btn.active {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+.tab-content {
+    margin-bottom: var(--spacing-md);
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-pane h3 {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    color: var(--primary-light);
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.course-card .card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-actions {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.course-actions .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.notes-footer {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.copyright-notice {
+    text-align: center;
+    color: var(--gray-text);
+    font-size: 0.9rem;
+}
+
+.donation-section {
+    text-align: center;
+}
+
+.donation-section p {
+    margin-bottom: 1rem;
+    color: var(--gray-text);
+}
+
+.donation-btn {
+    background-color: #0070ba; /* PayPal blue */
+}
+
+.donation-btn:hover {
+    background-color: #003087; /* Darker PayPal blue */
+}
+
+/* ===== CV DOWNLOAD SECTION ===== */
+.cv-download {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-md);
+    text-align: center;
+}
+
+.cv-download h3 {
+    color: var(--primary-light);
+    margin-bottom: 0.5rem;
+}
+
+.cv-download p {
+    margin-bottom: 1rem;
+    color: var(--gray-text);
+}
+
+.cv-download .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .notes-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .tab-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .course-actions {
+        flex-direction: column;
+    }
+}

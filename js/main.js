@@ -195,4 +195,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     `;
     document.head.appendChild(style);
+    
+
+    // Gestione delle tab nella sezione Appunti Universitari
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+
+    // Funzione per cambiare tab
+    function changeTab(e) {
+        // Rimuove classe active da tutti i bottoni
+        tabBtns.forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Aggiunge classe active al bottone cliccato
+        e.target.classList.add('active');
+        
+        // Nasconde tutte le tab
+        tabPanes.forEach(pane => {
+            pane.classList.remove('active');
+        });
+        
+        // Mostra la tab selezionata
+        const targetId = e.target.getAttribute('data-target');
+        document.getElementById(targetId).classList.add('active');
+    }
+
+    // Event listener per i bottoni delle tab
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', changeTab);
+});
 });
