@@ -303,4 +303,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5000);
     }
 
+    const languageBtn = document.getElementById('language-btn');
+    const languageDropdown = document.getElementById('language-dropdown');
+    const languageOptions = document.querySelectorAll('.language-option');
+    
+    // Toggle language dropdown
+    languageBtn.addEventListener('click', () => {
+        languageDropdown.classList.toggle('show');
+    });
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.language-selector')) {
+            languageDropdown.classList.remove('show');
+        }
+    });
+    
+    // Change language
+    languageOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const lang = option.dataset.lang;
+            const flagImg = option.querySelector('img').src;
+            const langName = option.querySelector('span').textContent;
+            
+            // Update button UI
+            document.getElementById('current-flag').src = flagImg;
+            document.getElementById('current-lang').textContent = langName;
+            
+            // In a real implementation, you would load translations here
+            // For demonstration, we'll just show an alert
+            alert(`Changing language to ${langName}. In a real implementation, this would load the ${lang} version of the site.`);
+            
+            // Hide dropdown
+            languageDropdown.classList.remove('show');
+        });
+    });
+
 });

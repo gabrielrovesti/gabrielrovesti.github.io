@@ -1557,3 +1557,207 @@ nav {
         text-align: center;
     }
 }
+
+.language-selector {
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem;
+}
+
+.language-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius-full);
+    color: var(--light-text);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.language-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.language-btn img {
+    width: 18px;
+    height: 12px;
+    border-radius: 2px;
+}
+
+.language-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-md);
+    padding: 0.5rem;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all var(--transition-fast);
+    z-index: var(--z-fixed);
+}
+
+.language-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+.language-option:hover {
+    background-color: var(--primary-dark);
+}
+
+.language-option img {
+    width: 18px;
+    height: 12px;
+    border-radius: 2px;
+}
+
+/* Testimonial enhancement */
+.testimonial-highlight {
+    color: var(--primary-light);
+    font-weight: 600;
+}
+
+.testimonial-message {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius-md);
+    background-color: rgba(110, 66, 193, 0.1);
+    text-align: center;
+    position: relative;
+}
+
+.testimonial-message:before {
+    content: "\f10d";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--primary-light);
+    opacity: 0.3;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.testimonial-message:after {
+    content: "\f10e";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--primary-light);
+    opacity: 0.3;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.testimonial-message p {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.testimonial-author-signature {
+    font-weight: 600;
+    color: var(--primary-light);
+}
+
+@media screen and (max-width: 768px) {
+    .language-selector {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
+    
+    .language-dropdown {
+        right: 50%;
+        transform: translateX(50%) translateY(10px);
+    }
+    
+    .language-dropdown.show {
+        transform: translateX(50%) translateY(0);
+    }
+}
+
+body {
+    transition: opacity 0.3s ease;
+}
+
+body.language-transition {
+    opacity: 0.5;
+}
+
+/* Miglioramento delle bandiere nel selettore di lingua */
+.language-btn img,
+.language-option img {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Aggiunta animazione dropdown */
+.language-dropdown {
+    transform-origin: top center;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.language-dropdown.show {
+    animation: dropdown-appear 0.3s forwards;
+}
+
+@keyframes dropdown-appear {
+    0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Hover stilizzato per le opzioni di lingua */
+.language-option {
+    border-left: 3px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.language-option:hover {
+    border-left: 3px solid var(--primary-color);
+    padding-left: 1.2rem;
+    background-color: rgba(110, 66, 193, 0.2);
+}
+
+/* Indicatore lingua attiva */
+.language-option.active {
+    background-color: rgba(110, 66, 193, 0.2);
+    border-left: 3px solid var(--primary-color);
+}
+
+/* Animazione per le transizioni di testo */
+.animated-text-change {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.animated-text-change.changing {
+    opacity: 0;
+    transform: translateY(-5px);
+}

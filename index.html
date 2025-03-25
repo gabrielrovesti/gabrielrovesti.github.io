@@ -38,6 +38,31 @@
                 </div>
             </nav>
         </div>
+        <div class="language-selector">
+            <button id="language-btn" class="language-btn">
+                <img id="current-flag" src="./img/flags/en.png" alt="English">
+                <span id="current-lang">English</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div id="language-dropdown" class="language-dropdown">
+                <div class="language-option" data-lang="en">
+                    <img src="./img/flags/en.png" alt="English">
+                    <span>English</span>
+                </div>
+                <div class="language-option" data-lang="it">
+                    <img src="./img/flags/it.png" alt="Italiano">
+                    <span>Italiano</span>
+                </div>
+                <div class="language-option" data-lang="fr">
+                    <img src="./img/flags/fr.png" alt="Français">
+                    <span>Français</span>
+                </div>
+                <div class="language-option" data-lang="es">
+                    <img src="./img/flags/es.png" alt="Español">
+                    <span>Español</span>
+                </div>
+            </div>
+        </div>
     </header>
 
     <!-- Hero Section -->
@@ -746,19 +771,6 @@
                         </div>
                     </div>
                     
-                    <div class="testimonial-card">
-                        <div class="testimonial-text">
-                            <i class="fas fa-quote-left"></i>
-                            <p>You're very kind thank you, your notes have been very useful overtime. </p>
-                        </div>
-                        <div class="testimonial-author">
-                            <img src="./img/testimonial.jpg" alt="" class="testimonial-img">
-                            <div class="author-info">
-                                <h4>Many students helped over the yeard</h4>
-                                <p>High School Students, B.Sc. / M.Sc. Students</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 
                 <div class="testimonial-controls">
@@ -768,7 +780,6 @@
                     <div class="testimonial-dots">
                         <span class="dot active"></span>
                         <span class="dot"></span>
-                        <span class="dot"></span>
                     </div>
                     <button class="next-btn" aria-label="Next testimonial">
                         <i class="fas fa-chevron-right"></i>
@@ -776,6 +787,8 @@
                 </div>
             </div>
         </div>
+
+        
     </section>
 
     <!-- Certifications Section -->
@@ -991,6 +1004,7 @@
   </section>
 
  <!-- Notes Section -->
+  
 <section id="notes" class="notes section-padding">
     <div class="container">
         <div class="section-header">
@@ -1005,6 +1019,13 @@
                 <strong>Note:</strong> All material is my original creation and does not violate any copyright.
                 It is provided free of charge for educational purposes.
             </p>
+
+            <div class="testimonial-message">
+                <p>Over the years, I've had the privilege of helping <span class="testimonial-highlight">hundreds of students</span> in their academic journeys. From high school students struggling with basic programming concepts to university graduates tackling complex algorithms, each interaction has enriched my teaching experience and reinforced my passion for education.</p>
+                <p>What started as simple study notes evolved into a comprehensive collection that has reached far beyond my initial expectations. The countless messages of gratitude I've received are a testament to the value of knowledge sharing and collaborative learning.</p>
+                <p>To every student who has trusted me with their education, to every peer who has recommended my materials, and to every professor who has supported my teaching methods - <span class="testimonial-highlight">thank you</span>. Your feedback and success stories continue to inspire my work.</p>
+                <div class="testimonial-author-signature">— Gabriel Rovesti</div>
+            </div>
             
             <!-- Tabs per navigare tra gli anni -->
             <div class="notes-tabs">
