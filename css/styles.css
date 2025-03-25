@@ -364,7 +364,6 @@ nav {
     letter-spacing: 0.5px;
     padding: 0.5rem 0;
 }
-
 .nav-link::after {
     content: '';
     position: absolute;
@@ -374,6 +373,7 @@ nav {
     height: 2px;
     background-color: var(--primary-color);
     transition: width var(--transition-fast);
+    display: block !important;
 }
 
 .nav-link:hover::after,
@@ -384,6 +384,10 @@ nav {
 .nav-link:hover,
 .nav-link.active {
     color: var(--light-text);
+}
+
+.nav-links li:nth-child(n+7) .nav-link { 
+    position: relative; 
 }
 
 .hamburger {
@@ -1562,6 +1566,7 @@ nav {
     display: flex;
     align-items: center;
     margin-left: 1.5rem;
+    position: relative;
 }
 
 .language-btn {
@@ -1592,7 +1597,7 @@ nav {
 .language-dropdown {
     position: absolute;
     top: 100%;
-    right: 1rem;
+    left: 0; 
     background-color: var(--card-bg);
     border-radius: var(--border-radius-md);
     padding: 0.5rem;
