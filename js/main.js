@@ -224,5 +224,83 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listener per i bottoni delle tab
     tabBtns.forEach(btn => {
         btn.addEventListener('click', changeTab);
-});
+    });
+
+    // Contact Form Submission
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real implementation, you would send the form data to a server
+            // For now, we'll just show a success message
+            const name = document.getElementById('name').value;
+            alert(`Thank you ${name} for your message! I'll get back to you soon.`);
+            contactForm.reset();
+        });
+    }
+    
+    // Testimonials Slider
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    const dots = document.querySelectorAll('.dot');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    
+    if (testimonialCards.length && dots.length) {
+        let currentSlide = 0;
+        
+        // Initially hide all testimonials except the first one
+        testimonialCards.forEach((card, index) => {
+            if (index !== 0) {
+                card.style.display = 'none';
+            }
+        });
+        
+        // Function to show a specific slide
+        const showSlide = (index) => {
+            // Hide all testimonials
+            testimonialCards.forEach(card => {
+                card.style.display = 'none';
+            });
+            
+            // Remove active class from all dots
+            dots.forEach(dot => {
+                dot.classList.remove('active');
+            });
+            
+            // Show the current testimonial and activate its dot
+            testimonialCards[index].style.display = 'block';
+            dots[index].classList.add('active');
+            
+            // Add animation
+            testimonialCards[index].style.animation = 'fadeIn 0.5s ease';
+        };
+        
+        // Event listener for next button
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % testimonialCards.length;
+            showSlide(currentSlide);
+        });
+        
+        // Event listener for previous button
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + testimonialCards.length) % testimonialCards.length;
+            showSlide(currentSlide);
+        });
+        
+        // Event listeners for dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+        
+        // Auto-scroll testimonials every 5 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % testimonialCards.length;
+            showSlide(currentSlide);
+        }, 5000);
+    }
+
 });
