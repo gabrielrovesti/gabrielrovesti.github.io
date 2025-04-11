@@ -17,6 +17,166 @@ document.addEventListener('DOMContentLoaded', () => {
     const moreProjects = document.getElementById('more-projects');
     const currentYearElem = document.getElementById('current-year');
 
+    // Crea overlay per il menu
+    const menuOverlay = document.createElement('div');
+    menuOverlay.className = 'menu-overlay';
+    document.body.appendChild(menuOverlay);
+
+    // Funzione per aprire/chiudere il menu
+    function toggleMenu(event) {
+        // Previeni comportamento predefinito se è un evento
+        if (event && event.preventDefault) event.preventDefault();
+        
+        // Toggle delle classi
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        menuOverlay.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+        
+        // Gestione dello scrolling quando il menu è aperto
+        if (document.body.classList.contains('menu-open')) {
+            document.body.setAttribute('data-scroll-position', window.pageYOffset);
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${window.pageYOffset}px`;
+            document.body.style.width = '100%';
+        } else {
+            const scrollPosition = document.body.getAttribute('data-scroll-position');
+            if (scrollPosition) {
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.width = '';
+                window.scrollTo(0, parseInt(scrollPosition));
+                document.body.removeAttribute('data-scroll-position');
+            }
+        }
+    }
+
+    // Typing effect
+    function initTypeWriter() {
+        const typedTextElement = document.querySelector('.typed-text');
+        const cursorElement = document.querySelector('.cursor');
+        
+        if (!typedTextElement || !cursorElement) return;
+        
+        let currentLang = getCurrentLanguage();
+        let currentPhrases = phrases[currentLang] || phrases.en;
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typeSpeed = 100;
+        
+        function type() {
+            const currentPhrase = currentPhrases[phraseIndex];
+            
+            // Aggiorna il contenuto di testo in base all'azione (digitare o cancellare)
+            if (isDeleting) {
+                typedTextElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typedTextElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            // Imposta la velocità di digitazione/cancellazione
+            if (isDeleting) {
+                typeSpeed = 50;
+            } else {
+                typeSpeed = 150 - Math.random() * 50;
+            }
+            
+            // Gestisci la transizione tra digitare e cancellare
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                // Pausa alla fine della digitazione
+                typeSpeed = 1500;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                // Cambia frase quando hai finito di cancellare
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % currentPhrases.length;
+                typeSpeed = 500;
+            }
+            
+            // Continua il ciclo
+            setTimeout(type, typeSpeed);
+        }
+        
+        // Avvia l'animazione
+        setTimeout(type, 1000);
+        
+        // Ascolta il cambio di lingua
+        document.addEventListener('languageChanged', (e) => {
+            currentLang = e.detail.language;
+            currentPhrases = phrases[currentLang] || phrases.en;
+        });
+    }
+
+    // Assicurati di chiamare questa funzione al caricamento della pagina
+    document.addEventListener('DOMContentLoaded', function() {
+        initTypeWriter();
+        
+        // Altre inizializzazioni
+        updateActiveNavLink();
+        
+        // Migliora la gesture touch per mobile
+        if ('ontouchstart' in window) {
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('touchstart', function(e) {
+                    this.click();
+                    e.preventDefault();
+                });
+            });
+        }
+    });
+
+    // Event listener per hamburger
+    if (hamburger) {
+        hamburger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMenu(e);
+        });
+    }
+
+    // Chiudi il menu quando si fa clic sull'overlay
+    menuOverlay.addEventListener('click', toggleMenu);
+
+    // Chiudi il menu quando si clicca su un link
+    navLinksItems.forEach(item => {
+        item.addEventListener('click', () => {
+            if (hamburger.classList.contains('active')) {
+                toggleMenu();
+            }
+        });
+    });
+
+    // Ripristina l'animazione del cursore
+    function enhanceTypingEffect() {
+        const typedTextElement = document.querySelector('.typed-text');
+        const cursorElement = document.querySelector('.cursor');
+        
+        if (typedTextElement && cursorElement) {
+            // Assicurati che il cursore sia visibile e animato
+            cursorElement.style.display = 'inline-block';
+            
+            // Funzione che migliora l'effetto di digitazione esistente
+            function improveTypingEffect() {
+                // Questo si integra con la funzione typeWriter esistente 
+                // garantendo che il cursore sia sempre visibile e animato correttamente
+                if (cursorElement.style.animation !== 'blink 1s infinite') {
+                    cursorElement.style.animation = 'blink 1s infinite';
+                }
+            }
+            
+            // Avvia il miglioramento
+            improveTypingEffect();
+            
+            // Controlla periodicamente che l'animazione sia attiva
+            setInterval(improveTypingEffect, 2000);
+        }
+    }
+
+    // Esegui il miglioramento dell'effetto di digitazione
+    enhanceTypingEffect();
+
     // Set current year for copyright
     if (currentYearElem) {
         currentYearElem.textContent = new Date().getFullYear();
@@ -26,16 +186,49 @@ document.addEventListener('DOMContentLoaded', () => {
     function toggleMenu() {
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
+        
+        if (navLinks.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+            menuOverlay.style.display = 'block';
+            setTimeout(() => {
+                menuOverlay.style.opacity = '1';
+            }, 10);
+        } else {
+            document.body.style.overflow = '';
+            menuOverlay.style.opacity = '0';
+            setTimeout(() => {
+                menuOverlay.style.display = 'none';
+            }, 300);
+        }
     }
 
-    hamburger.addEventListener('click', toggleMenu);
-
-    navLinksItems.forEach(item => {
-        item.addEventListener('click', () => {
+    // Gestisci il resize della finestra
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && hamburger.classList.contains('active')) {
+            // Reset a desktop view
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
-        });
+            menuOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            document.body.style.top = '';
+        }
     });
+
+    // Soluzione per problemi di touch su mobile
+    function handleTouchMove(e) {
+        // Consenti lo scorrimento all'interno del menu, ma non del body
+        if (document.body.classList.contains('menu-open')) {
+            const target = e.target;
+            const isInsideMenu = navLinks.contains(target) || navLinks === target;
+            
+            if (!isInsideMenu) {
+                e.preventDefault();
+            }
+        }
+    }
+
+    // Aggiungi gli event listener touch
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
 
     // Scroll event listener
     window.addEventListener('scroll', () => {
@@ -124,9 +317,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Typing effect
     const typedTextElement = document.querySelector('.typed-text');
-    if (typedTextElement) {
+    const cursorElement = document.querySelector('.cursor');
+    
+    if (typedTextElement && cursorElement) {
+        // Assicurati che il cursore sia visibile
+        cursorElement.style.display = 'inline-block';
+        
+        // Definisci i testi per ogni lingua
         const phrases = {
             en: [
                 'Full-Stack Developer',
@@ -154,54 +352,53 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         };
         
+        // Variabili per l'animazione
+        let currentLang = getCurrentLanguage();
         let phraseIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
-        let typingSpeed = 100;
-        let currentLang = getCurrentLanguage();
-
-        function typeWriter() {
+        let typingDelay = 150;
+        
+        // Funzione principale di animazione
+        function type() {
             const currentPhrases = phrases[currentLang] || phrases.en;
             const currentPhrase = currentPhrases[phraseIndex];
             
+            // Imposta direzione di animazione (scrivere o cancellare)
             if (isDeleting) {
+                // Cancella un carattere
                 typedTextElement.textContent = currentPhrase.substring(0, charIndex - 1);
                 charIndex--;
-                typingSpeed = 50;
+                typingDelay = 50;
             } else {
+                // Aggiungi un carattere
                 typedTextElement.textContent = currentPhrase.substring(0, charIndex + 1);
                 charIndex++;
-                typingSpeed = 100;
+                typingDelay = 150 - Math.random() * 50;
             }
             
+            // Gestisci transizioni e pause
             if (!isDeleting && charIndex === currentPhrase.length) {
-                // Pause at end of typing
+                // Fine scrittura - pausa
                 isDeleting = true;
-                typingSpeed = 1500;
+                typingDelay = 1500;
             } else if (isDeleting && charIndex === 0) {
+                // Fine cancellazione - cambia frase
                 isDeleting = false;
                 phraseIndex = (phraseIndex + 1) % currentPhrases.length;
-                // Pause before typing next phrase
-                typingSpeed = 500;
+                typingDelay = 500;
             }
             
-            setTimeout(typeWriter, typingSpeed);
+            // Continua ciclo
+            setTimeout(type, typingDelay);
         }
         
-        // Start the typing effect
-        setTimeout(typeWriter, 1000);
-
-        // Update typing effect when language changes
+        // Avvia l'animazione dopo 1 secondo
+        setTimeout(type, 1000);
+        
+        // Aggiorna quando cambia la lingua
         document.addEventListener('languageChanged', (e) => {
             currentLang = e.detail.language;
-            if (isDeleting) {
-                // Keep deleting if we're in the middle of deleting
-                // The phrase will change once fully deleted
-            } else {
-                // If in the middle of typing, reset and start with new language
-                isDeleting = true;
-                charIndex = typedTextElement.textContent.length;
-            }
         });
     }
 
