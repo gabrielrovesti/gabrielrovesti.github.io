@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero-Knowledge Proofs: Applicazioni per la Sicurezza Mobile - Gabriel Rovesti Blog</title>
+    <meta name="description" content="Esploriamo l'implementazione di Zero-Knowledge Proofs nelle applicazioni mobili, offrendo soluzioni concrete per migliorare la privacy degli utenti senza compromettere la sicurezza.">
+    <meta name="keywords" content="zero-knowledge proofs, sicurezza mobile, privacy, zkp, crittografia, blockchain">
+    <meta name="author" content="Gabriel Rovesti">
+    
+    <!-- Meta tags per condivisione social -->
+    <meta property="og:title" content="Zero-Knowledge Proofs: Applicazioni per la Sicurezza Mobile">
+    <meta property="og:description" content="Esploriamo l'implementazione di Zero-Knowledge Proofs nelle applicazioni mobili per migliorare la privacy degli utenti.">
+    <meta property="og:url" content="https://gabrielrovesti.github.io/blog/posts/2025/04/zero-knowledge-proofs.html">
+    <meta property="og:type" content="article">
+    <meta property="og:image" content="https://gabrielrovesti.github.io/img/blog/zkp-mobile.jpg">
+    
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/img/favicon.png">
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header id="header">
+        <div class="container">
+            <a href="/" class="logo">Gabriel Rovesti</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="/" class="nav-link">HOME</a></li>
+                    <li><a href="/#about" class="nav-link">ABOUT</a></li>
+                    <li><a href="/#experience" class="nav-link">EXPERIENCE</a></li>
+                    <li><a href="/#skills" class="nav-link">SKILLS</a></li>
+                    <li><a href="/#projects" class="nav-link">PROJECTS</a></li>
+                    <li><a href="/#education" class="nav-link">EDUCATION</a></li>
+                    <li><a href="/#certifications" class="nav-link">CERTIFICATIONS</a></li>
+                    <li><a href="/#achievements" class="nav-link">ACHIEVEMENTS</a></li>
+                    <li><a href="/#notes" class="nav-link">NOTES</a></li>
+                    <li><a href="/blog/" class="nav-link active">BLOG</a></li>
+                    <li><a href="/#contact" class="nav-link">CONTACT</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Article Header -->
+    <div class="article-header">
+        <div class="container">
+            <div class="article-meta">
+                <span><i class="far fa-calendar-alt"></i> 10 Aprile 2025</span>
+                <span><i class="fas fa-tag"></i> Sicurezza</span>
+            </div>
+            <h1 class="article-page-title">Zero-Knowledge Proofs: Applicazioni per la Sicurezza Mobile</h1>
+            <div class="author-info">
+                <img src="/img/gabriel.jpg" alt="Gabriel Rovesti" class="author-img">
+                <div class="author-details">
+                    <div class="author-name">Gabriel Rovesti</div>
+                    <div class="author-role">Full Stack Developer & Educator</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article Content -->
+    <article class="article-body">
+        <div class="container">
+            <p>
+                Esploriamo l'implementazione di Zero-Knowledge Proofs nelle applicazioni mobili, offrendo soluzioni concrete per migliorare la privacy degli utenti senza compromettere la sicurezza. Durante il mio recente lavoro su sistemi di autenticazione decentralizzati, ho sperimentato diversi approcci che vorrei condividere in questo articolo.
+            </p>
+
+            <h2>Cosa sono gli Zero-Knowledge Proofs?</h2>
+            <p>
+                Gli Zero-Knowledge Proofs (ZKP) sono protocolli crittografici che consentono a una parte (il prover) di dimostrare a un'altra parte (il verifier) che un'affermazione è vera, senza rivelare alcuna informazione aggiuntiva oltre alla validità dell'affermazione stessa.
+            </p>
+            <p>
+                Questa capacità rivoluzionaria ha tre proprietà fondamentali:
+            </p>
+            <ul>
+                <li><strong>Completezza:</strong> Se l'affermazione è vera, un verifier onesto sarà convinto da un prover onesto.</li>
+                <li><strong>Solidità:</strong> Se l'affermazione è falsa, nessun prover disonesto può convincere il verifier che sia vera (se non con una probabilità trascurabile).</li>
+                <li><strong>Zero-Knowledge:</strong> Il verifier non ottiene alcuna informazione aggiuntiva oltre al fatto che l'affermazione sia vera.</li>
+            </ul>
+
+            <h2>Applicazioni pratiche nel contesto mobile</h2>
+            <p>
+                Nel contesto delle applicazioni mobili, gli ZKP stanno emergendo come strumenti potenti per vari casi d'uso:
+            </p>
+
+            <h3>1. Autenticazione avanzata senza password</h3>
+            <p>
+                Una delle implementazioni più interessanti che ho sviluppato utilizza ZKP per creare un sistema di autenticazione senza password che non memorizza nemmeno hash delle credenziali sul server:
+            </p>
+
+            <pre><code>// Esempio di implementazione lato client con zk-SNARKs
+import { generateProof } from 'snarkjs';
+
+async function authenticateUser(username, biometricData) {
+  // Generazione del witness dall'input dell'utente
+  const witness = buildWitness(username, biometricData);
+  
+  // Generazione della prova (avviene localmente sul dispositivo)
+  const { proof, publicSignals } = await generateProof(
+    witness, 
+    'authentication.wasm', 
+    'authentication.zkey'
+  );
+  
+  // Invio solo della prova al server, senza credenziali
+  const response = await api.authenticate({
+    username: username,
+    proof: proof,
+    publicSignals: publicSignals
+  });
+  
+  return response.token;
+}</code></pre>
+
+            <h3>2. Verifica dell'età privacy-preserving</h3>
+            <p>
+                Un'altra applicazione pratica riguarda la verifica dell'età senza rivelare la data di nascita completa:
+            </p>
+            <p>
+                Ho implementato un sistema che consente agli utenti di dimostrare di avere più di una certa età (ad esempio 18 anni) senza rivelare la loro data di nascita effettiva. Questo è particolarmente utile per app di dating, servizi di streaming e vendita di prodotti con restrizioni di età.
+            </p>
+
+            <h3>3. Transazioni finanziarie confidenziali</h3>
+            <p>
+                Le app di pagamento mobile possono utilizzare ZKP per consentire transazioni verificabili mantenendo privati i dettagli:
+            </p>
+            <ul>
+                <li>L'importo della transazione resta nascosto a terze parti</li>
+                <li>L'identità del mittente/destinatario può essere protetta</li>
+                <li>La prova che la transazione è valida (fondi sufficienti, ecc.) può comunque essere verificata</li>
+            </ul>
+
+            <blockquote>
+                "Gli Zero-Knowledge Proofs rappresentano un cambio di paradigma nella sicurezza mobile: possiamo finalmente offrire verificabilità senza sacrificare la privacy degli utenti."
+            </blockquote>
+
+            <h2>Implementazioni concrete con Kotlin e Swift</h2>
+            <p>
+                Vediamo come implementare ZKP in applicazioni mobili native utilizzando librerie esistenti:
+            </p>
+
+            <h3>Android (Kotlin)</h3>
+            <pre><code>// Implementazione con libreria ZKP per Android
+import com.github.zkp.android.ZKProver
+
+class BiometricAuthenticator {
+    private val zkProver = ZKProver()
+    
+    fun generateAuthProof(biometricHash: ByteArray): Proof {
+        // Genera un proving key dal biometric hash
+        val provingKey = zkProver.deriveKey(biometricHash)
+        
+        // Crea una prova che l'utente possiede la chiave corretta
+        // senza rivelare la chiave stessa
+        return zkProver.prove(
+            statement = "user_owns_correct_biometric",
+            witness = provingKey,
+            publicParams = getAuthParams()
+        )
+    }
+}
+
+// Utilizzo nel flusso di autenticazione
+viewModel.authenticate {
+    val biometricHash = biometricManager.getCurrentBiometricHash()
+    val proof = authenticator.generateAuthProof(biometricHash)
+    apiService.verifyIdentity(proof)
+}</code></pre>
+
+            <h3>iOS (Swift)</h3>
+            <pre><code>// Implementazione Swift con ZKKit
+import ZKKit
+
+class AgeVerifier {
+    private let zkVerifier = ZKVerifier()
+    
+    func verifyUserIsAdult(birthDate: Date, challenge: String) -> AgeProof? {
+        let currentDate = Date()
+        let calendar = Calendar.current
+        let ageComponents = calendar.dateComponents([.year], from: birthDate, to: currentDate)
+        guard let age = ageComponents.year else { return nil }
+        
+        // Crea una prova che l'età è >= 18 senza rivelare la data di nascita
+        return zkVerifier.createProof(
+            claim: "age >= 18",
+            privateInput: age,
+            threshold: 18,
+            challenge: challenge
+        )
+    }
+}
+
+// Utilizzo nell'app
+let ageProof = verifier.verifyUserIsAdult(
+    birthDate: userBirthDate,
+    challenge: serverChallenge
+)
+
+if let proof = ageProof {
+    contentService.unlockAdultContent(with: proof)
+}</code></pre>
+
+            <h2>Sfide e considerazioni pratiche</h2>
+            <p>
+                Nonostante i vantaggi, l'implementazione di ZKP nelle app mobili presenta alcune sfide:
+            </p>
+            <ul>
+                <li><strong>Performance:</strong> La generazione di prove ZK è computazionalmente intensiva e può influire sulla durata della batteria e sulle prestazioni del dispositivo.</li>
+                <li><strong>Complessità:</strong> L'implementazione richiede conoscenze specialistiche in crittografia.</li>
+                <li><strong>Compatibilità:</strong> Non tutti i dispositivi mobili hanno risorse sufficienti per computazioni ZK complesse.</li>
+                <li><strong>Usabilità:</strong> I ritardi nella generazione delle prove possono influire negativamente sull'esperienza utente.</li>
+            </ul>
+
+            <p>
+                Per mitigare questi problemi, ho sviluppato diverse strategie:
+            </p>
+            <ol>
+                <li>Utilizzo di ZK-SNARKs leggeri ottimizzati per dispositivi mobili</li>
+                <li>Precalcolo di parte dei parametri quando possibile</li>
+                <li>Implementazione di una coda di priorità per le operazioni ZK</li>
+                <li>Generazione delle prove in background con feedback visivo appropriato</li>
+            </ol>
+
+            <h2>Il futuro degli ZKP nelle app mobili</h2>
+            <p>
+                Il campo è in rapida evoluzione e vedo diverse tendenze promettenti:
+            </p>
+            <ul>
+                <li>ZK-rollups per scalabilità migliorata delle transazioni blockchain da mobile</li>
+                <li>ZK proofs più efficienti con algoritmi ottimizzati per ARM</li>
+                <li>Framework cross-platform per sviluppatori senza expertise crittografica</li>
+                <li>Integrazione con sistemi di verifica biometrica a livello hardware</li>
+            </ul>
+
+            <p>
+                In conclusione, gli Zero-Knowledge Proofs rappresentano una tecnologia trasformativa per la sicurezza mobile, offrendo un raro caso in cui possiamo aumentare sia la privacy che la sicurezza simultaneamente. La loro adozione crescente segna un importante passo avanti verso un ecosistema mobile che rispetta maggiormente la privacy degli utenti senza compromettere la verificabilità.
+            </p>
+        </div>
+    </article>
+
+    <!-- Article Navigation -->
+    <div class="article-navigation">
+        <a href="/blog/posts/2025/04/2025-04-13.html" class="prev-article"><i class="fas fa-arrow-left"></i> Articolo precedente</a>
+        <a href="/blog/" class="back-to-blog"><i class="fas fa-th-large"></i> Torna al blog</a>
+        <a href="/blog/posts/2025/04/teaching-methods.html" class="next-article">Articolo successivo <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <!-- Related Articles -->
+    <section class="related-articles">
+        <div class="container">
+            <h2>Potrebbe interessarti anche</h2>
+            <div class="related-articles-grid">
+                <div class="related-article-card">
+                    <h3 class="related-article-title"><a href="/blog/posts/2025/03/blockchain-authentication.html">Autenticazione Self-Sovereign: Il Futuro dell'Identità Digitale</a></h3>
+                    <div class="related-article-date">10 Marzo 2025</div>
+                </div>
+                <div class="related-article-card">
+                    <h3 class="related-article-title"><a href="#">Crittografia Post-Quantum: Preparare le App Mobile</a></h3>
+                    <div class="related-article-date">28 Febbraio 2025</div>
+                </div>
+                <div class="related-article-card">
+                    <h3 class="related-article-title"><a href="#">FIDO2 e WebAuthn: Autenticazione Senza Password</a></h3>
+                    <div class="related-article-date">15 Febbraio 2025</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="copyright">&copy; 2025 Gabriel Rovesti. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/gabriel-rovesti-601404220/" target="_blank" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com/gabrielrovesti" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
