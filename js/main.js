@@ -768,7 +768,42 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             footer: {
                 copyright: "All rights reserved."
-            }
+            },
+            hobbies: {
+                title: "Hobbies & Interests",
+                intro: "Beyond coding and academic pursuits, I nurture a diverse range of interests that keep me balanced and inspired.",
+                categories: {
+                    music: "Music & Arts",
+                    gaming: "Gaming & Technology",
+                    physical: "Physical Activities",
+                    learning: "Learning & Growth"
+                },
+                musicList: {
+                    item1: "Passionate about funk and black music",
+                    item2: "Michael Jackson enthusiast",
+                    item3: "Creative writing and poetry lover",
+                    item4: "Art appreciation focused on creativity and detail"
+                },
+                gamingList: {
+                    item1: "Game design enthusiast",
+                    item2: "Retro gaming collector",
+                    item3: "Exploring emerging technologies",
+                    item4: "Following AI and automation trends"
+                },
+                physicalList: {
+                    item1: "Karate practitioner with brown belt (9 years Shotokan style)",
+                    item2: "Cycling enthusiast from Ferrara, \"city of bicycles\"",
+                    item3: "Evening walks after work - \"Forrest Gump of walking\"",
+                    item4: "Occasional hiking in nature"
+                },
+                learningList: {
+                    item1: "Curious and hard-working, constantly learning out of passion",
+                    item2: "Reading diverse topics from philosophy to science fiction",
+                    item3: "Problem-solving challenges and puzzles",
+                    item4: "Language learning as a cognitive exercise"
+                },
+                quote: "I believe that balancing technical expertise with diverse interests creates a more creative, adaptable, and innovative approach to problem-solving."
+            },
         },
         // Italian translation
         it: {
@@ -980,7 +1015,42 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             footer: {
                 copyright: "Tutti i diritti riservati."
-            }
+            },
+            hobbies: {
+                title: "Hobby & Interessi",
+                intro: "Oltre alla programmazione e agli impegni accademici, coltivo una vasta gamma di interessi che mi mantengono equilibrato e ispirato.",
+                categories: {
+                    music: "Musica & Arte",
+                    gaming: "Gaming & Tecnologia",
+                    physical: "Attività Fisiche",
+                    learning: "Apprendimento & Crescita"
+                },
+                musicList: {
+                    item1: "Appassionato di funk e musica black",
+                    item2: "Entusiasta di Michael Jackson",
+                    item3: "Amante della scrittura creativa e della poesia",
+                    item4: "Apprezzamento dell'arte focalizzato sulla creatività e il dettaglio"
+                },
+                gamingList: {
+                    item1: "Entusiasta di game design",
+                    item2: "Collezionista di retrogaming",
+                    item3: "Esplorazione di tecnologie emergenti",
+                    item4: "Seguire tendenze di AI e automazione"
+                },
+                physicalList: {
+                    item1: "Praticante di karate con cintura marrone (9 anni stile Shotokan)",
+                    item2: "Appassionato di ciclismo da Ferrara, \"città delle biciclette\"",
+                    item3: "Passeggiate serali dopo il lavoro - \"Forrest Gump della camminata\"",
+                    item4: "Occasionali escursioni nella natura"
+                },
+                learningList: {
+                    item1: "Curioso e determinato, in costante apprendimento per passione",
+                    item2: "Lettura di argomenti diversi dalla filosofia alla fantascienza",
+                    item3: "Sfide di problem-solving e puzzle",
+                    item4: "Apprendimento delle lingue come esercizio cognitivo"
+                },
+                quote: "Credo che bilanciare competenze tecniche con interessi diversi crei un approccio più creativo, adattabile e innovativo alla risoluzione dei problemi."
+            },
         },
         // French translation
         fr: {
@@ -1192,7 +1262,42 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             footer: {
                 copyright: "Tous droits réservés."
-            }
+            },
+            hobbies: {
+                title: "Loisirs & Intérêts",
+                intro: "Au-delà de la programmation et des poursuites académiques, je cultive une gamme diverse d'intérêts qui me maintiennent équilibré et inspiré.",
+                categories: {
+                    music: "Musique & Arts",
+                    gaming: "Jeux & Technologie",
+                    physical: "Activités Physiques",
+                    learning: "Apprentissage & Développement"
+                },
+                musicList: {
+                    item1: "Passionné de funk et de musique noire",
+                    item2: "Enthousiaste de Michael Jackson",
+                    item3: "Amateur d'écriture créative et de poésie",
+                    item4: "Appréciation de l'art axée sur la créativité et le détail"
+                },
+                gamingList: {
+                    item1: "Passionné de conception de jeux",
+                    item2: "Collectionneur de jeux rétro",
+                    item3: "Exploration des technologies émergentes",
+                    item4: "Suivi des tendances en IA et automatisation"
+                },
+                physicalList: {
+                    item1: "Pratiquant de karaté avec ceinture marron (9 ans de style Shotokan)",
+                    item2: "Passionné de cyclisme de Ferrare, \"ville des vélos\"",
+                    item3: "Promenades du soir après le travail - \"Forrest Gump de la marche\"",
+                    item4: "Randonnées occasionnelles dans la nature"
+                },
+                learningList: {
+                    item1: "Curieux et travailleur, en apprentissage constant par passion",
+                    item2: "Lecture de sujets divers, de la philosophie à la science-fiction",
+                    item3: "Défis de résolution de problèmes et puzzles",
+                    item4: "Apprentissage des langues comme exercice cognitif"
+                },
+                quote: "Je crois que l'équilibre entre expertise technique et intérêts divers crée une approche plus créative, adaptable et innovante à la résolution de problèmes."
+            },
         },
         // Spanish translation
         es: {
@@ -1404,7 +1509,42 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             footer: {
                 copyright: "Todos los derechos reservados."
-            }
+            },
+            hobbies: {
+                title: "Aficiones & Intereses",
+                intro: "Más allá de la programación y los estudios académicos, cultivo una diversa gama de intereses que me mantienen equilibrado e inspirado.",
+                categories: {
+                    music: "Música & Artes",
+                    gaming: "Videojuegos & Tecnología",
+                    physical: "Actividades Físicas",
+                    learning: "Aprendizaje & Crecimiento"
+                },
+                musicList: {
+                    item1: "Apasionado del funk y la música negra",
+                    item2: "Entusiasta de Michael Jackson",
+                    item3: "Amante de la escritura creativa y la poesía",
+                    item4: "Apreciación del arte enfocada en la creatividad y el detalle"
+                },
+                gamingList: {
+                    item1: "Entusiasta del diseño de juegos",
+                    item2: "Coleccionista de videojuegos retro",
+                    item3: "Exploración de tecnologías emergentes",
+                    item4: "Seguimiento de tendencias en IA y automatización"
+                },
+                physicalList: {
+                    item1: "Practicante de karate con cinturón marrón (9 años estilo Shotokan)",
+                    item2: "Aficionado al ciclismo de Ferrara, \"ciudad de bicicletas\"",
+                    item3: "Paseos vespertinos después del trabajo - \"Forrest Gump del caminar\"",
+                    item4: "Excursiones ocasionales en la naturaleza"
+                },
+                learningList: {
+                    item1: "Curioso y trabajador, aprendiendo constantemente por pasión",
+                    item2: "Lectura de temas diversos, desde filosofía hasta ciencia ficción",
+                    item3: "Desafíos de resolución de problemas y rompecabezas",
+                    item4: "Aprendizaje de idiomas como ejercicio cognitivo"
+                },
+                quote: "Creo que equilibrar la experiencia técnica con intereses diversos crea un enfoque más creativo, adaptable e innovador para la resolución de problemas."
+            },
         }
     };
 
@@ -1731,7 +1871,6 @@ document.addEventListener('DOMContentLoaded', () => {
                                 const element = document.querySelector(nestedSelector);
                                 translateElement(element, nestedTranslation);
                             } else {
-// Per semplicità, non gestisco livelli di nesting più profondi
                             }
                         }
                     }
