@@ -671,7 +671,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 msc: {
                     title: "M.Sc. in Computer Science",
                     place: "University of Padua",
-                    desc: "Major in Internet, Mobile and Security – courses include Mobile Application Security, Advanced Cryptography, Secure App Development, and Big Data Management."
+                    desc: "Major in Internet, Mobile and Security - courses include Mobile Application Security, Advanced Cryptography, Secure App Development, and Big Data Management."
                 },
                 bsc: {
                     title: "B.Sc. in Computer Science",
@@ -739,7 +739,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     tab5: "Master's - Major",
                     tab6: "Master's - Minor",
                     tab7: "Master's - Free Choice",
-                    tab8: "Optional Courses"
+                    tab8: "Bachelor/Master - Other Elective"
                 },
                 message: {
                     p1: "Over the years, I've had the privilege of helping hundreds of students in their academic journeys. From high school students struggling with basic programming concepts to university graduates tackling complex algorithms, each interaction has enriched my teaching experience and reinforced my passion for education.",
@@ -1233,7 +1233,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     tab5: "Master - Majeure",
                     tab6: "Master - Mineure",
                     tab7: "Master - Choix Libre",
-                    tab8: "Cours Optionnels"
+                    tab8: "Cours Optionnels",
                 },
                 message: {
                     p1: "Au fil des années, j'ai eu le privilège d'aider des centaines d'étudiants dans leurs parcours académiques. Des lycéens luttant avec les concepts de base de la programmation aux diplômés universitaires abordant des algorithmes complexes, chaque interaction a enrichi mon expérience d'enseignement et renforcé ma passion pour l'éducation.",
