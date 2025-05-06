@@ -544,12 +544,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 showSlide(currentSlide);
             });
         });
-        
-        // Auto-scroll testimonials every 5 seconds
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % testimonialCards.length;
-            showSlide(currentSlide);
-        }, 5000);
     }
 
     // ==========================================

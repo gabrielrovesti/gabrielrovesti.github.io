@@ -2005,7 +2005,6 @@ body.language-transition {
     text-align: right;
 }
 
-/* Responsive adjustments */
 @media screen and (max-width: 768px) {
     .hobbies-category {
         text-align: center;
@@ -2017,5 +2016,54 @@ body.language-transition {
     
     .hobbies-quote blockquote {
         padding: var(--spacing-sm);
+    }
+}
+
+.audio-player-container {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: rgba(110, 66, 193, 0.1);
+    border-radius: var(--border-radius-md);
+    text-align: center;
+}
+
+.audio-player-container h4 {
+    color: var(--primary-light);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.interview-date {
+    font-size: 0.8rem;
+    color: var(--gray-text);
+    margin-bottom: 1rem;
+}
+
+.custom-audio-player {
+    width: 100%;
+    border-radius: var(--border-radius-md);
+    margin-bottom: 1rem;
+}
+
+.custom-audio-player::-webkit-media-controls-panel {
+    background-color: rgba(110, 66, 193, 0.2);
+}
+
+.custom-audio-player::-webkit-media-controls-play-button,
+.custom-audio-player::-webkit-media-controls-volume-slider,
+.custom-audio-player::-webkit-media-controls-mute-button {
+    color: var(--primary-light);
+}
+
+.interview-description {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    font-style: italic;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .audio-player-container {
+        padding: 0.75rem;
     }
 }
