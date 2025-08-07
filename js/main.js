@@ -567,8 +567,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 contact: "Contact"
             },
             hero: {
-                greeting: "Hi, I'm Gabriel",
-                subtitle: "M.Sc. Computer Science Student",
+                greeting: "it's-a-me, Gabriel!",
+                subtitle: "CS Teacher, IT Consultant, Full Stack Developer",
                 caption: "Bridging academic excellence with real-world innovation.",
                 description: "From reactive systems to blockchain-based security, I build robust, scalable, and user-centric solutions.",
                 cta: "Get in Touch",
@@ -580,11 +580,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 intro2: "I love exploring innovative solutions—from real-time reactive systems to blockchain applications—and thrive on empowering others through teaching and mentorship.",
                 focus: "Focus Areas",
                 areas: {
-                    area1: "Cybersecurity & Cloud Computing",
-                    area2: "DevOps & CI/CD",
+                    area1: "Accessibility & IT Consultant",
+                    area2: "Full Stack Developer",
                     area3: "Blockchain & Decentralized Apps",
                     area4: "Software Architecture & Engineering", 
-                    area5: "Inclusive Teaching & Mentorship"
+                    area5: "CS Teacher & Tutor"
                 },
                 cv: {
                     title: "Curriculum Vitae",
@@ -814,8 +814,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 contact: "Contatti"
             },
             hero: {
-                greeting: "Ciao, sono Gabriel",
-                subtitle: "Studente di Laurea Magistrale in Informatica",
+                greeting: "Ciao, sono Gabriel!",
+                subtitle: "Insegnante, Consulente IT, Sviluppatore Full Stack",
                 caption: "Collegando l'eccellenza accademica con l'innovazione del mondo reale.",
                 description: "Dai sistemi reattivi alla sicurezza basata su blockchain, costruisco soluzioni robuste, scalabili e incentrate sull'utente.",
                 cta: "Contattami",
@@ -912,7 +912,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 msc: {
                     title: "Laurea Magistrale in Informatica",
                     place: "Università di Padova",
-                    desc: "Major in Internet, Mobile and Security – corsi includono Sicurezza delle Applicazioni Mobili, Crittografia Avanzata, Sviluppo di App Sicure e Gestione di Big Data."
+                    desc: "Major in Internet, Mobile and Security - corsi includono Sicurezza delle Applicazioni Mobili, Crittografia Avanzata, Sviluppo di App Sicure e Gestione di Big Data."
                 },
                 bsc: {
                     title: "Laurea in Informatica",
@@ -1062,7 +1062,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             hero: {
                 greeting: "Bonjour, je suis Gabriel",
-                subtitle: "Étudiant en Master Informatique",
+                subtitle: "Professeur de CS, Consultant IT, Développeur Full Stack",
                 caption: "Associer l'excellence académique à l'innovation concrète.",
                 description: "Des systèmes réactifs à la sécurité basée sur la blockchain, je construis des solutions robustes, évolutives et centrées sur l'utilisateur.",
                 cta: "Me Contacter",
@@ -1159,7 +1159,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 msc: {
                     title: "Master en Informatique",
                     place: "Université de Padoue",
-                    desc: "Spécialisation en Internet, Mobile et Sécurité – les cours incluent la Sécurité des Applications Mobiles, la Cryptographie Avancée, le Développement d'Applications Sécurisées et la Gestion des Big Data."
+                    desc: "Spécialisation en Internet, Mobile et Sécurité - les cours incluent la Sécurité des Applications Mobiles, la Cryptographie Avancée, le Développement d'Applications Sécurisées et la Gestion des Big Data."
                 },
                 bsc: {
                     title: "Licence en Informatique",
