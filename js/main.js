@@ -567,7 +567,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 contact: "Contact"
             },
             hero: {
-                greeting: "it's-a-me, Gabriel!",
+                greeting: "It's-a-me, Gabriel!",
                 subtitle: "CS Teacher, IT Consultant, Full Stack Developer",
                 caption: "Bridging academic excellence with real-world innovation.",
                 description: "From reactive systems to blockchain-based security, I build robust, scalable, and user-centric solutions.",
