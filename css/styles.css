@@ -877,8 +877,8 @@ nav {
 
 .skill-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.5rem;
 }
 
 .skill-card {
@@ -904,17 +904,17 @@ nav {
 }
 
 .skill-icon {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    width: 50px;
+    height: 80px;
+    width: 80px;
     transition: transform var(--transition-normal);
 }
 
 .skill-card:hover .skill-icon {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 .skill-icon img {
