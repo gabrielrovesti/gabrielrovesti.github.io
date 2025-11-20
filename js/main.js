@@ -212,33 +212,50 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Experience toggle - show 6 more at a time
-    let visibleExperiencesCount = 3;
+    // Experience toggle - show 3 by default, then all
     if (experienceToggle) {
         const allExperienceCards = document.querySelectorAll('.experience-card');
+        const initialVisibleCount = 3;
+        let isExpanded = false;
 
-        // Hide all experiences beyond the first 3
+        // Initial state: hide experiences beyond the first 3
         allExperienceCards.forEach((card, index) => {
-            if (index >= visibleExperiencesCount) {
+            if (index >= initialVisibleCount) {
                 card.style.display = 'none';
             }
         });
 
         experienceToggle.addEventListener('click', function() {
-            const hiddenExperiences = Array.from(allExperienceCards).filter(card => card.style.display === 'none');
-
-            if (hiddenExperiences.length > 0) {
-                // Show next 6 experiences
-                const toShow = hiddenExperiences.slice(0, 6);
-                toShow.forEach(card => {
+            isExpanded = !isExpanded;
+            
+            if (isExpanded) {
+                // Show all experiences
+                allExperienceCards.forEach(card => {
                     card.style.display = 'block';
+                    // Add animation class for newly revealed cards
+                    if (card.style.display !== 'none') {
+                        card.classList.add('fade-in');
+                    }
                 });
-                visibleExperiencesCount += toShow.length;
-
-                // Hide button if all are visible
-                if (visibleExperiencesCount >= allExperienceCards.length) {
-                    this.style.display = 'none';
+                
+                // Update button state to "Show Less"
+                this.classList.add('active');
+            } else {
+                // Hide experiences beyond initial count
+                allExperienceCards.forEach((card, index) => {
+                    if (index >= initialVisibleCount) {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Scroll back to the top of the experience section smoothly
+                const experienceSection = document.getElementById('experience');
+                if (experienceSection) {
+                    experienceSection.scrollIntoView({ behavior: 'smooth' });
                 }
+                
+                // Update button state to "Show More"
+                this.classList.remove('active');
             }
         });
     }
