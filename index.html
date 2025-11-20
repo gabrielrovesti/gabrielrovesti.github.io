@@ -65,8 +65,11 @@
                         <a href="#contact" class="btn btn-primary">
                             <i class="fas fa-envelope"></i> Get in Touch
                         </a>
-                        <a href="./docs/CV Gabriel Rovesti.pdf"" class="btn btn-secondary" download>
+                        <a href="./docs/CV Gabriel Rovesti.pdf" class="btn btn-secondary" download>
                             <i class="fas fa-download"></i> Download CV
+                        </a>
+                        <a href="#notes" class="btn btn-accent">
+                            <i class="fas fa-book-open"></i> Browse Notes
                         </a>
                     </div>
                 </div>
@@ -454,11 +457,21 @@
                 <h2 class="section-title">Projects</h2>
                 <div class="underline"></div>
             </div>
+            
+            <!-- Project Filters -->
+            <div class="project-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="web-mobile">Web & Mobile</button>
+                <button class="filter-btn" data-filter="ai-algo">AI & Algorithms</button>
+                <button class="filter-btn" data-filter="security">Security</button>
+                <button class="filter-btn" data-filter="systems">Systems & Backend</button>
+            </div>
+
             <div class="projects-grid" id="featured-projects">
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="web-mobile">
                     <div class="card-header">
-                        <h3>AccessibleHub</h3>
+                        <h3><i class="fas fa-mobile-alt category-icon"></i> AccessibleHub</h3>
                         <span class="badge">07/2025</span>
                     </div>
                     <div class="card-body">
@@ -476,9 +489,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="ai-algo">
                     <div class="card-header">
-                        <h3>TinyML-Interpreter</h3>
+                        <h3><i class="fas fa-brain category-icon"></i> TinyML-Interpreter</h3>
                         <span class="badge">06/2025</span>
                     </div>
                     <div class="card-body">
@@ -496,9 +509,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="web-mobile">
                     <div class="card-header">
-                        <h3>University Accessibility Toolkit</h3>
+                        <h3><i class="fas fa-universal-access category-icon"></i> University Accessibility Toolkit</h3>
                         <span class="badge">06/2025</span>
                     </div>
                     <div class="card-body">
@@ -516,9 +529,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="ai-algo">
                     <div class="card-header">
-                        <h3>Wedding Seating Optimization CSP</h3>
+                        <h3><i class="fas fa-chess category-icon"></i> Wedding Seating Optimization CSP</h3>
                         <span class="badge">06/2025</span>
                     </div>
                     <div class="card-body">
@@ -536,9 +549,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="systems">
                     <div class="card-header">
-                        <h3>Concurrent Graph LCD</h3>
+                        <h3><i class="fas fa-project-diagram category-icon"></i> Concurrent Graph LCD</h3>
                         <span class="badge">05/2025</span>
                     </div>
                     <div class="card-body">
@@ -556,9 +569,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="ai-algo">
                     <div class="card-header">
-                        <h3>Advanced Algorithms Assignments</h3>
+                        <h3><i class="fas fa-code-branch category-icon"></i> Advanced Algorithms Assignments</h3>
                         <span class="badge">05/2025</span>
                     </div>
                     <div class="card-body">
@@ -576,9 +589,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="ai-algo">
                     <div class="card-header">
-                        <h3>Numerical Analysis Projects</h3>
+                        <h3><i class="fas fa-calculator category-icon"></i> Numerical Analysis Projects</h3>
                         <span class="badge">04/2025</span>
                     </div>
                     <div class="card-body">
@@ -595,9 +608,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="systems">
                     <div class="card-header">
-                        <h3>FigureSkatingScorer</h3>
+                        <h3><i class="fas fa-skating category-icon"></i> FigureSkatingScorer</h3>
                         <span class="badge">04/2025</span>
                     </div>
                     <div class="card-body">
@@ -615,9 +628,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="systems">
                     <div class="card-header">
-                        <h3>PDF Generator Service</h3>
+                        <h3><i class="fas fa-file-pdf category-icon"></i> PDF Generator Service</h3>
                         <span class="badge">04/2025</span>
                     </div>
                     <div class="card-body">
@@ -635,9 +648,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="ai-algo">
                     <div class="card-header">
-                        <h3>PredictSense</h3>
+                        <h3><i class="fas fa-chart-line category-icon"></i> PredictSense</h3>
                         <span class="badge">04/2025</span>
                     </div>
                     <div class="card-body">
@@ -655,9 +668,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="systems">
                     <div class="card-header">
-                        <h3>Event Analyzer</h3>
+                        <h3><i class="fas fa-bolt category-icon"></i> Event Analyzer</h3>
                         <span class="badge">03/2025</span>
                     </div>
                     <div class="card-body">
@@ -674,9 +687,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="systems">
                     <div class="card-header">
-                        <h3>SystemFX</h3>
+                        <h3><i class="fas fa-cogs category-icon"></i> SystemFX</h3>
                         <span class="badge">03/2025</span>
                     </div>
                     <div class="card-body">
@@ -693,10 +706,9 @@
                 </div>
             
             <!-- More projects -->
-            <div class="projects-grid" id="more-projects">
-                    <div class="card project-card">
+                    <div class="card project-card" data-category="web-mobile">
                         <div class="card-header">
-                            <h3>FlutterRustImageFX</h3>
+                            <h3><i class="fas fa-image category-icon"></i> FlutterRustImageFX</h3>
                             <span class="badge">02/2025 - 03/2025</span>
                         </div>
                         <div class="card-body">
@@ -712,9 +724,9 @@
                         </div>
                     </div>
 
-                    <div class="card project-card">
+                    <div class="card project-card" data-category="ai-algo">
                         <div class="card-header">
-                            <h3>Circuit Board Drilling Optimization</h3>
+                            <h3><i class="fas fa-microchip category-icon"></i> Circuit Board Drilling Optimization</h3>
                             <span class="badge">10/2024 - 01/2025</span>
                         </div>
                         <div class="card-body">
@@ -729,11 +741,10 @@
                             </a>
                         </div>
                     </div>
-                </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="systems">
                     <div class="card-header">
-                        <h3>IT Service Management - Bank Decommissioning</h3>
+                        <h3><i class="fas fa-server category-icon"></i> IT Service Management - Bank Decommissioning</h3>
                         <span class="badge">06/2024 - 09/2024</span>
                     </div>
                     <div class="card-body">
@@ -748,9 +759,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="ai-algo">
                     <div class="card-header">
-                        <h3>UAV Route Planning Strategies</h3>
+                        <h3><i class="fas fa-route category-icon"></i> UAV Route Planning Strategies</h3>
                         <span class="badge">07/2024 - 09/2024</span>
                     </div>
                     <div class="card-body">
@@ -765,9 +776,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="web-mobile">
                     <div class="card-header">
-                        <h3>DocHub</h3>
+                        <h3><i class="fas fa-file-alt category-icon"></i> DocHub</h3>
                         <span class="badge">04/2024 - 07/2024</span>
                     </div>
                     <div class="card-body">
@@ -782,9 +793,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="security">
                     <div class="card-header">
-                        <h3>NIST CSF Security Report</h3>
+                        <h3><i class="fas fa-shield-alt category-icon"></i> NIST CSF Security Report</h3>
                         <span class="badge">04/2024 - 06/2024</span>
                     </div>
                     <div class="card-body">
@@ -800,9 +811,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="security">
                     <div class="card-header">
-                        <h3>PLA Bluetooth Environment</h3>
+                        <h3><i class="fas fa-bluetooth category-icon"></i> PLA Bluetooth Environment</h3>
                         <span class="badge">12/2023 - 06/2024</span>
                     </div>
                     <div class="card-body">
@@ -818,9 +829,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="security">
                     <div class="card-header">
-                        <h3>VerifiedMovies</h3>
+                        <h3><i class="fas fa-film category-icon"></i> VerifiedMovies</h3>
                         <span class="badge">03/2023 - 06/2023</span>
                     </div>
                     <div class="card-body">
@@ -836,9 +847,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="systems">
                     <div class="card-header">
-                        <h3>Qt Charts Visualization Tool</h3>
+                        <h3><i class="fas fa-chart-bar category-icon"></i> Qt Charts Visualization Tool</h3>
                         <span class="badge">2022-2023</span>
                     </div>
                     <div class="card-body">
@@ -856,9 +867,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="systems">
                     <div class="card-header">
-                        <h3>Fog Festival Database System</h3>
+                        <h3><i class="fas fa-database category-icon"></i> Fog Festival Database System</h3>
                         <span class="badge">2022-2023</span>
                     </div>
                     <div class="card-body">
@@ -876,9 +887,9 @@
                     </div>
                 </div>
 
-                <div class="card project-card">
+                <div class="card project-card" data-category="web-mobile">
                     <div class="card-header">
-                        <h3>Pop-Tech E-commerce Platform</h3>
+                        <h3><i class="fas fa-shopping-cart category-icon"></i> Pop-Tech E-commerce Platform</h3>
                         <span class="badge">2022-2023</span>
                     </div>
                     <div class="card-body">

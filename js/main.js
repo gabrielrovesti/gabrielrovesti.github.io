@@ -261,11 +261,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Projects toggle - show 6 more at a time
-    let visibleProjectsCount = 3;
+    let visibleProjectsCount = 6; // Start with 6 visible
     if (projectsToggle) {
         const allProjectCards = document.querySelectorAll('.project-card');
 
-        // Hide all projects beyond the first 3
+        // Hide all projects beyond the first 6
         allProjectCards.forEach((card, index) => {
             if (index >= visibleProjectsCount) {
                 card.style.display = 'none';
@@ -279,7 +279,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Show next 6 projects
                 const toShow = hiddenProjects.slice(0, 6);
                 toShow.forEach(card => {
-                    card.style.display = 'block';
+                    card.style.display = 'flex';
+                    card.classList.add('fade-in');
                 });
                 visibleProjectsCount += toShow.length;
 
@@ -509,6 +510,41 @@ document.addEventListener('DOMContentLoaded', () => {
             dot.addEventListener('click', () => {
                 currentSlide = index;
                 showSlide(currentSlide);
+            });
+        });
+    }
+
+    // Project Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    const projectsToggleBtn = document.getElementById('projects-toggle');
+
+    if (filterBtns.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                // When filtering, show all matching projects and hide the "Show More" button
+                if (projectsToggleBtn) projectsToggleBtn.style.display = 'none';
+
+                projectCards.forEach(card => {
+                    const category = card.getAttribute('data-category');
+                    
+                    if (filterValue === 'all' || category === filterValue) {
+                        card.style.display = 'flex';
+                        // Re-trigger animation
+                        card.classList.remove('fade-in');
+                        void card.offsetWidth; // trigger reflow
+                        card.classList.add('fade-in');
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
             });
         });
     }

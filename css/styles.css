@@ -251,13 +251,64 @@ button {
     transform: rotate(180deg);
 }
 
-.btn-toggle:hover {
-    background-color: var(--primary-dark);
+.btn-accent {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
 }
 
-.toggle-container {
-    text-align: center;
-    margin-top: var(--spacing-md);
+.btn-accent:hover {
+    background-color: var(--secondary-light);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+}
+
+/* Project Filters */
+.project-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--gray-text);
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--border-radius-full);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all var(--transition-fast);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+}
+
+.category-icon {
+    color: var(--primary-light);
+    margin-right: 0.5rem;
+    font-size: 1rem;
+}
+
+/* Enhanced Project Card Actions */
+.project-card .btn-outline {
+    margin-top: auto;
+    border-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
+    width: 100%;
+    justify-content: center;
+}
+
+.project-card .btn-outline:hover {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
 }
 
 .section-header {
@@ -534,6 +585,8 @@ nav {
     align-items: center;
     justify-content: space-between;
     gap: var(--spacing-lg);
+    position: relative;
+    z-index: 2;
 }
 
 .hero-text {
