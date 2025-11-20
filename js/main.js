@@ -52,17 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Typing effect removed
-    /*
-    function initTypeWriter() {
-        // ... code removed ...
-    }
-    */
-
     // Assicurati di chiamare questa funzione al caricamento della pagina
     document.addEventListener('DOMContentLoaded', function() {
-        // initTypeWriter(); // Removed
-        
         // Altre inizializzazioni
         updateActiveNavLink();
         
@@ -96,14 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-
-    // Ripristina l'animazione del cursore - Removed
-    /*
-    function enhanceTypingEffect() {
-        // ... code removed ...
-    }
-    enhanceTypingEffect();
-    */
 
     // Set current year for copyright
     if (currentYearElem) {
@@ -452,9 +435,42 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             const name = document.getElementById('name').value;
-            alert(`Thank you ${name} for your message! I'll get back to you soon.`);
+            
+            // Simulate sending (success)
+            showNotification(`Thanks ${name}! Message sent successfully.`, 'success');
             contactForm.reset();
         });
+    }
+
+    // Custom Notification System
+    function showNotification(message, type = 'success') {
+        // Create element
+        const notification = document.createElement('div');
+        notification.className = `notification-toast ${type}`;
+        
+        // Icon based on type
+        const iconClass = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
+        
+        notification.innerHTML = `
+            <i class="fas ${iconClass}"></i>
+            <span>${message}</span>
+        `;
+        
+        // Add to DOM
+        document.body.appendChild(notification);
+        
+        // Trigger animation
+        setTimeout(() => {
+            notification.classList.add('show');
+        }, 10);
+        
+        // Remove after 3 seconds
+        setTimeout(() => {
+            notification.classList.remove('show');
+            setTimeout(() => {
+                notification.remove();
+            }, 300);
+        }, 3000);
     }
     
     // Testimonials Slider

@@ -2409,3 +2409,50 @@ body.language-transition {
         padding: 0.75rem;
     }
 }
+
+/* ===== NOTIFICATION TOAST ===== */
+.notification-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem 1.5rem;
+    border-radius: var(--border-radius-sm);
+    box-shadow: var(--shadow-lg);
+    color: var(--light-text);
+    z-index: var(--z-modal);
+    transform: translateX(120%);
+    transition: transform var(--transition-normal);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 300px;
+}
+
+.notification-toast.show {
+    transform: translateX(0);
+}
+
+.notification-toast i {
+    font-size: 1.25rem;
+}
+
+.notification-toast.success {
+    border-left-color: var(--success-color);
+}
+
+.notification-toast.success i {
+    color: var(--success-color);
+}
+
+.notification-toast.error {
+    border-left-color: #EF4444;
+}
+
+.notification-toast.error i {
+    color: #EF4444;
+}
