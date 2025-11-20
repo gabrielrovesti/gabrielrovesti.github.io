@@ -52,60 +52,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Typing effect
+    // Typing effect removed
+    /*
     function initTypeWriter() {
-        const typedTextElement = document.querySelector('.typed-text');
-        const cursorElement = document.querySelector('.cursor');
-
-        if (!typedTextElement || !cursorElement) return;
-
-        const phrases = [
-            'Full-Stack Developer',
-            'Cybersecurity Enthusiast',
-            'Tutor & Teacher',
-            'Blockchain & Cloud Adventurer'
-        ];
-
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        let typeSpeed = 100;
-
-        function type() {
-            const currentPhrase = phrases[phraseIndex];
-
-            if (isDeleting) {
-                typedTextElement.textContent = currentPhrase.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typedTextElement.textContent = currentPhrase.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            if (isDeleting) {
-                typeSpeed = 50;
-            } else {
-                typeSpeed = 150 - Math.random() * 50;
-            }
-
-            if (!isDeleting && charIndex === currentPhrase.length) {
-                typeSpeed = 1500;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                phraseIndex = (phraseIndex + 1) % phrases.length;
-                typeSpeed = 500;
-            }
-
-            setTimeout(type, typeSpeed);
-        }
-
-        setTimeout(type, 1000);
+        // ... code removed ...
     }
+    */
 
     // Assicurati di chiamare questa funzione al caricamento della pagina
     document.addEventListener('DOMContentLoaded', function() {
-        initTypeWriter();
+        // initTypeWriter(); // Removed
         
         // Altre inizializzazioni
         updateActiveNavLink();
@@ -141,34 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Ripristina l'animazione del cursore
+    // Ripristina l'animazione del cursore - Removed
+    /*
     function enhanceTypingEffect() {
-        const typedTextElement = document.querySelector('.typed-text');
-        const cursorElement = document.querySelector('.cursor');
-        
-        if (typedTextElement && cursorElement) {
-            // Assicurati che il cursore sia visibile e animato
-            cursorElement.style.display = 'inline-block';
-            
-            // Funzione che migliora l'effetto di digitazione esistente
-            function improveTypingEffect() {
-                // Questo si integra con la funzione typeWriter esistente 
-                // garantendo che il cursore sia sempre visibile e animato correttamente
-                if (cursorElement.style.animation !== 'blink 1s infinite') {
-                    cursorElement.style.animation = 'blink 1s infinite';
-                }
-            }
-            
-            // Avvia il miglioramento
-            improveTypingEffect();
-            
-            // Controlla periodicamente che l'animazione sia attiva
-            setInterval(improveTypingEffect, 2000);
-        }
+        // ... code removed ...
     }
-
-    // Esegui il miglioramento dell'effetto di digitazione
     enhanceTypingEffect();
+    */
 
     // Set current year for copyright
     if (currentYearElem) {
