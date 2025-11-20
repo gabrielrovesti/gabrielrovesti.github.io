@@ -41,16 +41,29 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1 class="glitch-text">Hi, I'm Gabriel</h1>
-                    <p class="subtitle">CS Teacher, IT Consultant, Full Stack Developer</p>
-                    <p class="caption">Bridging academic excellence with real-world innovation.</p>
+                    <div class="hero-greeting">Hello, I'm</div>
+                    <h1 class="hero-title">Gabriel Rovesti</h1>
+                    <p class="hero-roles">
+                        <span class="role-item">CS Teacher</span>
+                        <span class="role-separator">•</span>
+                        <span class="role-item">IT Consultant</span>
+                        <span class="role-separator">•</span>
+                        <span class="role-item">Full-Stack Developer</span>
+                    </p>
                     <div class="typing-container">
                         <span class="typed-text"></span><span class="cursor">&nbsp;</span>
                     </div>
-                    <p class="description">
-                        From reactive systems to blockchain-based security, I build robust, scalable, and user-centric solutions.
+                    <p class="hero-description">
+                        Building scalable solutions and sharing knowledge. From teaching computer science to developing production systems, I bridge education with real-world technology.
                     </p>
-                    <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                    <div class="hero-cta-group">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i> Get in Touch
+                        </a>
+                        <a href="./cv.pdf" class="btn btn-secondary" download>
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
                 </div>
                 <div class="hero-image">
                     <img src="./img/gabriel.jpg" alt="Gabriel Rovesti" class="profile-img">
@@ -72,10 +85,43 @@
                 <h2 class="section-title">About Me</h2>
                 <div class="underline"></div>
             </div>
+
+            <!-- Quick Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="stat-number">23+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Students Taught</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="stat-number">13+</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="stat-number">Top 50</div>
+                    <div class="stat-label">STEM at UniPD</div>
+                </div>
+            </div>
+
             <div class="about-content">
                 <div class="about-text">
-                    <p>I'm a <span class="highlight">Full-Stack Developer</span> and <span class="highlight">Educator</span> with expertise in cybersecurity, software engineering, and emerging tech.</p>
-                    <p>I love exploring innovative solutions—from real-time reactive systems to blockchain applications—and thrive on empowering others through teaching and mentorship.</p>
+                    <p>I'm a <span class="highlight">Full-Stack Developer</span> and <span class="highlight">Educator</span> with expertise in cybersecurity, software engineering, and emerging technologies.</p>
+                    <p>I combine academic excellence with practical experience—from building scalable applications to teaching computer science. I believe in sharing knowledge and creating solutions that make a real impact.</p>
                 </div>
                 <div class="about-focus">
                     <h3>Focus Areas</h3>
@@ -2559,16 +2605,62 @@
   <!-- Footer -->
   <footer class="footer">
       <div class="container">
-          <div class="footer-content">
-              <p class="copyright">&copy; <span id="current-year"></span> Gabriel Rovesti. All rights reserved.</p>
-              <div class="social-links">
-                  <a href="https://www.linkedin.com/in/gabriel-rovesti-601404220/" target="_blank" aria-label="LinkedIn">
-                      <i class="fab fa-linkedin"></i>
-                  </a>
-                  <a href="https://github.com/gabrielrovesti" target="_blank" aria-label="GitHub">
-                      <i class="fab fa-github"></i>
-                  </a>
+          <div class="footer-grid">
+              <!-- About Column -->
+              <div class="footer-column">
+                  <h3>Gabriel Rovesti</h3>
+                  <p class="footer-bio">CS Teacher, IT Consultant & Full-Stack Developer passionate about education, cybersecurity, and emerging technologies.</p>
+                  <div class="footer-social">
+                      <a href="https://www.linkedin.com/in/gabriel-rovesti-601404220/" target="_blank" aria-label="LinkedIn">
+                          <i class="fab fa-linkedin"></i>
+                      </a>
+                      <a href="https://github.com/gabrielrovesti" target="_blank" aria-label="GitHub">
+                          <i class="fab fa-github"></i>
+                      </a>
+                  </div>
               </div>
+
+              <!-- Quick Links Column -->
+              <div class="footer-column">
+                  <h3>Quick Links</h3>
+                  <ul class="footer-links">
+                      <li><a href="#about">About Me</a></li>
+                      <li><a href="#experience">Experience</a></li>
+                      <li><a href="#projects">Projects</a></li>
+                      <li><a href="#education">Education</a></li>
+                  </ul>
+              </div>
+
+              <!-- Resources Column -->
+              <div class="footer-column">
+                  <h3>Resources</h3>
+                  <ul class="footer-links">
+                      <li><a href="#notes">University Notes</a></li>
+                      <li><a href="#certifications">Certifications</a></li>
+                      <li><a href="#achievements">Achievements</a></li>
+                      <li><a href="#skills">Skills</a></li>
+                  </ul>
+              </div>
+
+              <!-- Contact Column -->
+              <div class="footer-column">
+                  <h3>Get In Touch</h3>
+                  <ul class="footer-contact">
+                      <li>
+                          <i class="fas fa-envelope"></i>
+                          <a href="#contact">Contact Form</a>
+                      </li>
+                      <li>
+                          <i class="fas fa-map-marker-alt"></i>
+                          <span>Padua, Italy</span>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+
+          <div class="footer-bottom">
+              <p class="copyright">&copy; <span id="current-year"></span> Gabriel Rovesti. All rights reserved.</p>
+              <p class="footer-tagline">Built with dedication to education and technology</p>
           </div>
       </div>
   </footer>
