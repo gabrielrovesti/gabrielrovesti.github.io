@@ -34,31 +34,6 @@
                 </div>
             </nav>
         </div>
-        <div class="language-selector">
-            <button id="language-btn" class="language-btn">
-                <img id="current-flag" src="./img/flags/en.png" alt="English">
-                <span id="current-lang">English</span>
-                <i class="fas fa-chevron-down"></i>
-            </button>
-            <div id="language-dropdown" class="language-dropdown">
-                <div class="language-option" data-lang="en">
-                    <img src="./img/flags/en.png" alt="English">
-                    <span>English</span>
-                </div>
-                <div class="language-option" data-lang="it">
-                    <img src="./img/flags/it.png" alt="Italiano">
-                    <span>Italiano</span>
-                </div>
-                <div class="language-option" data-lang="fr">
-                    <img src="./img/flags/fr.png" alt="Français">
-                    <span>Français</span>
-                </div>
-                <div class="language-option" data-lang="es">
-                    <img src="./img/flags/es.png" alt="Español">
-                    <span>Español</span>
-                </div>
-            </div>
-        </div>
     </header>
 
     <!-- Hero Section -->
@@ -189,8 +164,8 @@
                 </div>
             </div>
             
-            <!-- Hidden experiences -->
-            <div class="experience-grid hidden" id="more-experiences">
+            <!-- More experiences -->
+            <div class="experience-grid" id="more-experiences">
                 <div class="card experience-card">
                     <div class="card-header">
                         <h3>Private Teacher & IT Assistant</h3>
@@ -706,8 +681,8 @@
                     </div>
                 </div>
             
-            <!-- Hidden projects -->
-            <div class="projects-grid hidden" id="more-projects">
+            <!-- More projects -->
+            <div class="projects-grid" id="more-projects">
                     <div class="card project-card">
                         <div class="card-header">
                             <h3>FlutterRustImageFX</h3>
@@ -1068,16 +1043,6 @@
             <div class="certifications-grid">
                 <div class="card certification-card">
                     <div class="cert-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3>Design Thinking & Service Design / Gamification / UX-UI</h3>
-                    <span class="issuer">Fastweb Digital Academy</span>
-                    <span class="issue-date">March 2025</span>
-                    <p>A comprehensive suite covering user-centric design, gamification, and advanced communication for the web.</p>
-                </div>
-
-                <div class="card certification-card">
-                    <div class="cert-icon">
                         <i class="fab fa-linux"></i>
                     </div>
                     <h3>Introduction to Kubernetes (LFS158) & Cilium (LFS146)</h3>
@@ -1206,6 +1171,14 @@
                     <p>Mobile application development program focusing on Android platform and UI/UX design.</p>
                 </div>
             </div>
+
+            <div class="toggle-container">
+                <button id="certifications-toggle" class="btn btn-toggle">
+                    <span class="show-text">Show More</span>
+                    <span class="hide-text">Show Less</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+            </div>
         </div>
     </section>
 
@@ -1285,25 +1258,34 @@
                 They are organized by academic year and subject.
             </p>
 
-            <div class="testimonial-message">
+            <div class="testimonial-message" style="margin-bottom: 3rem;">
                 <p>To every student who has trusted me with their education, to every peer who has recommended my materials, and to every professor who has supported my teaching methods - <span class="testimonial-highlight">thank you</span>. Your feedback and success stories continue to inspire my work.</p>
                 <div class="testimonial-author-signature">— Gabriel</div>
             </div>
-            
-            <!-- Tabs per navigare tra gli anni -->
+
+            <!-- Main category tabs -->
             <div class="notes-tabs">
-                <button class="tab-btn active" data-target="triennale-1">1° Anno Triennale</button>
-                <button class="tab-btn" data-target="triennale-2">2° Anno Triennale</button>
-                <button class="tab-btn" data-target="triennale-3">3° Anno Triennale</button>
-                <button class="tab-btn" data-target="magistrale-mandatory">Magistrale - Mandatory</button>
-                <button class="tab-btn" data-target="magistrale-major">Magistrale - Major</button>
-                <button class="tab-btn" data-target="magistrale-minor">Magistrale - Minor</button>
-                <button class="tab-btn" data-target="magistrale-free">Magistrale - Free Choice</button>
-                <button class="tab-btn" data-target="opzionali">Opzionali e Libera Scelta</button>
-                <button class="tab-btn" data-target="triennale-others">Triennale - Altri</button>
-                <button class="tab-btn" data-target="magistrale-others">Magistrale - Altri</button>
-                <button class="tab-btn" data-target="tutorati">Tutorati / Insegnamenti</button>
-                <button class="tab-btn" data-target="tesi">Tesi / Master Thesis</button>
+                <button class="tab-btn main-tab active" data-category="bachelor">Bachelor</button>
+                <button class="tab-btn main-tab" data-category="master">Master</button>
+                <button class="tab-btn main-tab" data-category="tutorings">Tutorings / Teachings</button>
+                <button class="tab-btn main-tab" data-category="thesis">Thesis</button>
+            </div>
+
+            <!-- Sub-tabs for Bachelor -->
+            <div class="notes-subtabs" id="bachelor-subtabs">
+                <button class="tab-btn sub-tab active" data-target="triennale-1">1st Year</button>
+                <button class="tab-btn sub-tab" data-target="triennale-2">2nd Year</button>
+                <button class="tab-btn sub-tab" data-target="triennale-3">3rd Year</button>
+                <button class="tab-btn sub-tab" data-target="triennale-others">Other Electives</button>
+            </div>
+
+            <!-- Sub-tabs for Master -->
+            <div class="notes-subtabs hidden" id="master-subtabs">
+                <button class="tab-btn sub-tab" data-target="magistrale-mandatory">Mandatory</button>
+                <button class="tab-btn sub-tab" data-target="magistrale-major">Major</button>
+                <button class="tab-btn sub-tab" data-target="magistrale-minor">Minor</button>
+                <button class="tab-btn sub-tab" data-target="magistrale-free">Free Choice</button>
+                <button class="tab-btn sub-tab" data-target="magistrale-others">Other Electives</button>
             </div>
             
             <!-- Contenuto dei tab -->
