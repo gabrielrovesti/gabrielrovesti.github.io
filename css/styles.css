@@ -5,6 +5,7 @@
 
 /* ===== BASE STYLES ===== */
 :root {
+    color-scheme: dark;
     /* Color scheme - Professional Teal & Slate & Violet */
     --primary-color: #0EA5E9;      /* Sky blue */
     --primary-light: #38BDF8;      /* Lighter sky blue */
