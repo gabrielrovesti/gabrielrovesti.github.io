@@ -1939,6 +1939,52 @@ nav {
     box-shadow: var(--shadow-lg);
 }
 
+.testimonial-card.scrollable-card {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 5px; /* Prevent content from hiding behind scrollbar */
+}
+
+/* Custom scrollbar for scrollable card */
+.testimonial-card.scrollable-card::-webkit-scrollbar {
+    width: 6px;
+}
+
+.testimonial-card.scrollable-card::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+}
+
+.testimonial-card.scrollable-card::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+.testimonial-card.scrollable-card::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-light);
+}
+
+.testimonial-card.compact {
+    padding: 1rem;
+}
+
+.testimonial-card.compact .testimonial-text {
+    margin-bottom: 1rem;
+}
+
+.testimonial-card.compact .audio-player-container h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.testimonial-card.compact .interview-date {
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-card.compact .custom-audio-player {
+    margin-bottom: 0.5rem;
+}
+
 .testimonial-text {
     margin-bottom: var(--spacing-md);
     position: relative;
