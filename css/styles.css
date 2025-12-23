@@ -140,6 +140,18 @@ button {
 }
 
 /* Common utility classes */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 .section-padding {
     padding: var(--spacing-lg) 0;
 }
@@ -156,7 +168,7 @@ button {
 .badge {
     display: inline-block;
     padding: 0.25rem 0.5rem;
-    background-color: var(--primary-dark);
+    background-color: #075985; /* Darker blue for better contrast */
     color: var(--light-text);
     font-size: var(--small-size);
     border-radius: var(--border-radius-sm);
@@ -187,12 +199,12 @@ button {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
+    background-color: #0369a1; /* Darker for contrast */
     color: var(--light-text);
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-dark);
+    background-color: #075985;
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(14, 165, 233, 0.3);
 }
@@ -253,12 +265,12 @@ button {
 }
 
 .btn-accent {
-    background-color: var(--secondary-color);
+    background-color: #6D28D9; /* Darker violet for contrast */
     color: var(--light-text);
 }
 
 .btn-accent:hover {
-    background-color: var(--secondary-light);
+    background-color: #5B21B6;
     transform: translateY(-3px);
     box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
 }
@@ -285,9 +297,9 @@ button {
 
 .filter-btn:hover,
 .filter-btn.active {
-    background-color: var(--primary-color);
+    background-color: #0369a1; /* Darker blue for contrast */
     color: var(--light-text);
-    border-color: var(--primary-color);
+    border-color: #0369a1;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
 }
@@ -1195,17 +1207,17 @@ nav {
 }
 
 .email-btn {
-    background-color: var(--info-color);
+    background-color: #7c3aed; /* Darker violet for better contrast */
 }
 
 .email-btn:hover {
-    background-color: #138596;
+    background-color: #6d28d9;
     color: var(--light-text);
     transform: translateY(-3px);
 }
 
 .linkedin-btn {
-    background-color: #0077B5;
+    background-color: #005E93; /* Darker LinkedIn blue for contrast */
 }
 
 .linkedin-btn:hover {
@@ -1709,7 +1721,7 @@ nav {
 }
 
 .tab-btn.active {
-    background-color: var(--primary-color);
+    background-color: #0369a1; /* Darker blue for contrast */
     color: var(--light-text);
 }
 
@@ -1740,7 +1752,7 @@ nav {
 }
 
 .sub-tab.active {
-    background-color: var(--primary-color);
+    background-color: #0369a1; /* Darker blue for contrast */
 }
 
 .tab-content {
