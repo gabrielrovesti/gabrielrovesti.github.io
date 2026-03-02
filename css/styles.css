@@ -2462,10 +2462,44 @@ body.language-transition {
     font-style: italic;
 }
 
+.video-player-container {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: rgba(110, 66, 193, 0.1);
+    border-radius: var(--border-radius-md);
+    text-align: center;
+}
+
+.video-player-container h4 {
+    color: var(--primary-light);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.custom-video-player {
+    width: 100%;
+    max-width: 800px;
+    border-radius: var(--border-radius-md);
+    margin-top: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.custom-video-player::-webkit-media-controls-panel {
+    background-color: rgba(110, 66, 193, 0.2);
+}
+
 /* Mobile responsiveness */
 @media screen and (max-width: 768px) {
     .audio-player-container {
         padding: 0.75rem;
+    }
+    
+    .video-player-container {
+        padding: 0.75rem;
+    }
+    
+    .custom-video-player {
+        max-width: 100%;
     }
 }
 
