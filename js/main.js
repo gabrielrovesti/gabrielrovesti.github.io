@@ -10,12 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
     const navLinksItems = document.querySelectorAll('.nav-link');
-    const expandBtns = document.querySelectorAll('.expand-btn');
-    const experienceToggle = document.getElementById('experience-toggle');
-    const projectsToggle = document.getElementById('projects-toggle');
-    const certificationsToggle = document.getElementById('certifications-toggle');
-    const moreExperiences = document.getElementById('more-experiences');
-    const moreProjects = document.getElementById('more-projects');
     const currentYearElem = document.getElementById('current-year');
 
     // Crea overlay per il menu
@@ -23,50 +17,18 @@ document.addEventListener('DOMContentLoaded', () => {
     menuOverlay.className = 'menu-overlay';
     document.body.appendChild(menuOverlay);
 
-    // Funzione per aprire/chiudere il menu
-    function toggleMenu(event) {
-        // Previeni comportamento predefinito se è un evento
-        if (event && event.preventDefault) event.preventDefault();
-        
-        // Toggle delle classi
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-        menuOverlay.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-        
-        // Gestione dello scrolling quando il menu è aperto
-        if (document.body.classList.contains('menu-open')) {
-            document.body.setAttribute('data-scroll-position', window.pageYOffset);
-            document.body.style.position = 'fixed';
-            document.body.style.top = `-${window.pageYOffset}px`;
-            document.body.style.width = '100%';
-        } else {
-            const scrollPosition = document.body.getAttribute('data-scroll-position');
-            if (scrollPosition) {
-                document.body.style.position = '';
-                document.body.style.top = '';
-                document.body.style.width = '';
-                window.scrollTo(0, parseInt(scrollPosition));
-                document.body.removeAttribute('data-scroll-position');
-            }
-        }
-    }
+    // Inizializzazioni al caricamento della pagina
+    updateActiveNavLink();
 
-    // Assicurati di chiamare questa funzione al caricamento della pagina
-    document.addEventListener('DOMContentLoaded', function() {
-        // Altre inizializzazioni
-        updateActiveNavLink();
-        
-        // Migliora la gesture touch per mobile
-        if ('ontouchstart' in window) {
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('touchstart', function(e) {
-                    this.click();
-                    e.preventDefault();
-                });
+    // Migliora la gesture touch per mobile
+    if ('ontouchstart' in window) {
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('touchstart', function(e) {
+                this.click();
+                e.preventDefault();
             });
-        }
-    });
+        });
+    }
 
     // Event listener per hamburger
     if (hamburger) {
@@ -196,133 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Skills expand/collapse
-    expandBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            const skillCard = this.closest('.skill-card');
-            skillCard.classList.toggle('expanded');
-            
-            if (skillCard.classList.contains('expanded')) {
-                this.innerHTML = '<i class="fas fa-minus"></i>';
-                this.setAttribute('aria-label', 'Hide details');
-            } else {
-                this.innerHTML = '<i class="fas fa-plus"></i>';
-                this.setAttribute('aria-label', 'Show details');
-            }
-        });
-    });
-
-    // Experience toggle - show 3 by default, then all
-    if (experienceToggle) {
-        const allExperienceCards = document.querySelectorAll('.experience-card');
-        const initialVisibleCount = 3;
-        let isExpanded = false;
-
-        // Initial state: hide experiences beyond the first 3
-        allExperienceCards.forEach((card, index) => {
-            if (index >= initialVisibleCount) {
-                card.style.display = 'none';
-            }
-        });
-
-        experienceToggle.addEventListener('click', function() {
-            isExpanded = !isExpanded;
-            
-            if (isExpanded) {
-                // Show all experiences
-                allExperienceCards.forEach(card => {
-                    card.style.display = 'block';
-                    // Add animation class for newly revealed cards
-                    if (card.style.display !== 'none') {
-                        card.classList.add('fade-in');
-                    }
-                });
-                
-                // Update button state to "Show Less"
-                this.classList.add('active');
-            } else {
-                // Hide experiences beyond initial count
-                allExperienceCards.forEach((card, index) => {
-                    if (index >= initialVisibleCount) {
-                        card.style.display = 'none';
-                    }
-                });
-                
-                // Scroll back to the top of the experience section smoothly
-                const experienceSection = document.getElementById('experience');
-                if (experienceSection) {
-                    experienceSection.scrollIntoView({ behavior: 'smooth' });
-                }
-                
-                // Update button state to "Show More"
-                this.classList.remove('active');
-            }
-        });
-    }
-
-    // Projects toggle - show 6 more at a time
-    let visibleProjectsCount = 6; // Start with 6 visible
-    if (projectsToggle) {
-        const allProjectCards = document.querySelectorAll('.project-card');
-
-        // Hide all projects beyond the first 6
-        allProjectCards.forEach((card, index) => {
-            if (index >= visibleProjectsCount) {
-                card.style.display = 'none';
-            }
-        });
-
-        projectsToggle.addEventListener('click', function() {
-            const hiddenProjects = Array.from(allProjectCards).filter(card => card.style.display === 'none');
-
-            if (hiddenProjects.length > 0) {
-                // Show next 6 projects
-                const toShow = hiddenProjects.slice(0, 6);
-                toShow.forEach(card => {
-                    card.style.display = 'flex';
-                    card.classList.add('fade-in');
-                });
-                visibleProjectsCount += toShow.length;
-
-                // Hide button if all are visible
-                if (visibleProjectsCount >= allProjectCards.length) {
-                    this.style.display = 'none';
-                }
-            }
-        });
-    }
-
-    // Certifications toggle - show 6 more at a time
-    let visibleCertificationsCount = 3;
-    if (certificationsToggle) {
-        const allCertificationCards = document.querySelectorAll('.certification-card');
-
-        // Hide all certifications beyond the first 3
-        allCertificationCards.forEach((card, index) => {
-            if (index >= visibleCertificationsCount) {
-                card.style.display = 'none';
-            }
-        });
-
-        certificationsToggle.addEventListener('click', function() {
-            const hiddenCertifications = Array.from(allCertificationCards).filter(card => card.style.display === 'none');
-
-            if (hiddenCertifications.length > 0) {
-                // Show next 6 certifications
-                const toShow = hiddenCertifications.slice(0, 6);
-                toShow.forEach(card => {
-                    card.style.display = 'block';
-                });
-                visibleCertificationsCount += toShow.length;
-
-                // Hide button if all are visible
-                if (visibleCertificationsCount >= allCertificationCards.length) {
-                    this.style.display = 'none';
-                }
-            }
-        });
-    }
-
     // Spotlight Effect for Cards
     const cards = document.querySelectorAll('.card, .skill-card');
     
@@ -445,140 +280,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Contact Form Submission
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value;
-            
-            // Simulate sending (success)
-            showNotification(`Thanks ${name}! Message sent successfully.`, 'success');
-            contactForm.reset();
-        });
-    }
-
-    // Custom Notification System
-    function showNotification(message, type = 'success') {
-        // Create element
-        const notification = document.createElement('div');
-        notification.className = `notification-toast ${type}`;
-        
-        // Icon based on type
-        const iconClass = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle';
-        
-        notification.innerHTML = `
-            <i class="fas ${iconClass}"></i>
-            <span>${message}</span>
-        `;
-        
-        // Add to DOM
-        document.body.appendChild(notification);
-        
-        // Trigger animation
-        setTimeout(() => {
-            notification.classList.add('show');
-        }, 10);
-        
-        // Remove after 3 seconds
-        setTimeout(() => {
-            notification.classList.remove('show');
-            setTimeout(() => {
-                notification.remove();
-            }, 300);
-        }, 3000);
-    }
-    
-    // Testimonials Slider
-    const testimonialCards = document.querySelectorAll('.testimonial-card');
-    const dots = document.querySelectorAll('.dot');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    
-    if (testimonialCards.length && dots.length) {
-        let currentSlide = 0;
-        
-        // Initially hide all testimonials except the first one
-        testimonialCards.forEach((card, index) => {
-            if (index !== 0) {
-                card.style.display = 'none';
-            }
-        });
-        
-        // Function to show a specific slide
-        const showSlide = (index) => {
-            // Hide all testimonials
-            testimonialCards.forEach(card => {
-                card.style.display = 'none';
-            });
-            
-            // Remove active class from all dots
-            dots.forEach(dot => {
-                dot.classList.remove('active');
-            });
-            
-            // Show the current testimonial and activate its dot
-            testimonialCards[index].style.display = 'block';
-            dots[index].classList.add('active');
-            
-            // Add animation
-            testimonialCards[index].style.animation = 'fadeIn 0.5s ease';
-        };
-        
-        // Event listener for next button
-        nextBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % testimonialCards.length;
-            showSlide(currentSlide);
-        });
-        
-        // Event listener for previous button
-        prevBtn.addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + testimonialCards.length) % testimonialCards.length;
-            showSlide(currentSlide);
-        });
-        
-        // Event listeners for dots
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                currentSlide = index;
-                showSlide(currentSlide);
-            });
-        });
-    }
-
-    // Project Filtering
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
-    const projectsToggleBtn = document.getElementById('projects-toggle');
-
-    if (filterBtns.length > 0) {
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                filterBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-
-                const filterValue = btn.getAttribute('data-filter');
-
-                // When filtering, show all matching projects and hide the "Show More" button
-                if (projectsToggleBtn) projectsToggleBtn.style.display = 'none';
-
-                projectCards.forEach(card => {
-                    const category = card.getAttribute('data-category');
-                    
-                    if (filterValue === 'all' || category === filterValue) {
-                        card.style.display = 'flex';
-                        // Re-trigger animation
-                        card.classList.remove('fade-in');
-                        void card.offsetWidth; // trigger reflow
-                        card.classList.add('fade-in');
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-    }
 });
