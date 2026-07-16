@@ -7,20 +7,9 @@
   <img src="https://img.shields.io/badge/GitHub_Pages-100000?style=for-the-badge&logo=github&logoColor=white">
 </div>
 
-## 📝 Descrizione
+## Descrizione
 
 Questo è il repository del mio portfolio personale, progettato per presentare la mia esperienza, competenze, progetti e formazione in modo professionale e accattivante. Il sito è costruito interamente con tecnologie web standard (HTML, CSS e JavaScript) e utilizza solo le librerie essenziali per mantenere prestazioni elevate e facilità di manutenzione.
-
-## ✨ Caratteristiche
-
-- **Design Responsive**: Completamente adattivo per tutti i dispositivi, dal mobile al desktop
-- **Effetti Interattivi**: Animazioni fluide, effetti di digitazione, navigazione smooth scrolling
-- **Tema Moderno**: Tema scuro con accenti in viola che crea un'esperienza visiva coinvolgente
-- **Ottimizzato per le Performance**: Caricamento rapido e interazioni fluide
-- **Sezioni Complete**: Home, About, Experience, Skills, Projects, Education, Certifications, Achievements e Contact
-- **Layout a Schede**: Cards per progetti ed esperienze con effetti di hover eleganti
-- **Espansioni Dinamiche**: Pulsanti "Show More" funzionanti per sezioni con molti contenuti
-- **Completamente Accessibile**: Struttura semantica e supporto per screen reader
 
 ## 🚀 Setup e Installazione
 
@@ -43,7 +32,7 @@ Questo è il repository del mio portfolio personale, progettato per presentare l
    - Vai su Settings > Pages e attiva GitHub Pages
    - Seleziona il branch `main` come source
 
-## 📂 Struttura del Progetto
+## Struttura del Progetto
 
 ```
 portfolio/
@@ -57,7 +46,7 @@ portfolio/
     └── favicon.png   # Favicon del sito
 ```
 
-## 🎮 Come Usare
+## Come Usare
 
 Il portfolio è strutturato in sezioni navigabili. La navigazione in alto consente di saltare direttamente a ciascuna sezione. Per mobile, è disponibile un menu hamburger che si apre con un tocco.
 
@@ -76,33 +65,6 @@ Per mantenere il sito aggiornato:
 1. **Aggiungi nuovi progetti**: Duplica un elemento card esistente nella sezione Projects
 2. **Aggiungi nuove esperienze**: Duplica un elemento nella sezione Experience
 3. **Aggiorna le competenze**: Modifica o aggiungi elementi nella sezione Skills
-
-## 🎨 Personalizzazione dei Colori
-
-Il tema utilizza variabili CSS per i colori principali. Per cambiarli, modifica queste variabili all'inizio di `styles.css`:
-
-```css
-:root {
-    /* Color scheme */
-    --primary-color: #6e42c1;    /* Colore principale */
-    --primary-light: #8c62db;    /* Versione più chiara */
-    --primary-dark: #4e2c96;     /* Versione più scura */
-    --secondary-color: #6610f2;  /* Colore secondario */
-    --accent-color: #e83e8c;     /* Colore accent */
-    --dark-bg: #101823;          /* Background principale */
-    --darker-bg: #0a0f16;        /* Background secondario */
-    --card-bg: #1a2332;          /* Background delle card */
-    --light-text: #f8f9fa;       /* Testo chiaro */
-    --gray-text: #adb5bd;        /* Testo grigio */
-}
-```
-
-## 📱 Responsive Design
-
-Il sito è completamente responsive con breakpoint a:
-- **992px**: Layout tablet largo
-- **768px**: Layout tablet/mobile
-- **576px**: Mobile piccolo
 
 ## 🔧 Tecnologie Utilizzate
 
