@@ -66,7 +66,7 @@ Per mantenere il sito aggiornato:
 2. **Aggiungi nuove esperienze**: Duplica un elemento nella sezione Experience
 3. **Aggiorna le competenze**: Modifica o aggiungi elementi nella sezione Skills
 
-## 🔧 Tecnologie Utilizzate
+## Tecnologie Utilizzate
 
 - **HTML5**: Struttura semantica
 - **CSS3**: Styling moderno con CSS custom properties, flexbox e grid
@@ -74,11 +74,11 @@ Per mantenere il sito aggiornato:
 - **Font Awesome**: Icone
 - **Google Fonts**: Tipografia (Poppins)
 
-## 📄 Licenza
+## Licenza
 
 Questo progetto è disponibile con licenza MIT. Sei libero di utilizzarlo come base per il tuo portfolio personale.
 
-## 👤 Autore
+## Autore
 
 **Gabriel Rovesti**
 
@@ -87,4 +87,4 @@ Questo progetto è disponibile con licenza MIT. Sei libero di utilizzarlo come b
 
 ---
 
-⭐️ Da [Gabriel Rovesti](https://github.com/gabrielrovesti)
+Da [Gabriel Rovesti](https://github.com/gabrielrovesti)
